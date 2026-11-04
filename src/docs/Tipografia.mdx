@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { TypeSpecimens } from './blocks';
+
+<Meta title="Fundamentos/Tipografia" />
+
+# Tipografia
+
+A família é **Inter**, sempre com tracking apertado nos títulos. O contraste vem do peso (Light contra
+Bold), não de tamanhos exagerados ou cores. São 13 text styles, em três grupos: Título, Texto e Interface.
+Sempre aplique um text style; evite tamanhos soltos.
+
+Cada style tem uma variável `--nds-type-<nome>` (atalho `font`), uma `--nds-type-<nome>-tracking` e uma
+classe utilitária `.nds-text-<nome>`.
+
+```css
+.titulo {
+  font: var(--nds-type-headline);
+  letter-spacing: var(--nds-type-headline-tracking);
+}
+```
+
+## Fonte Inter
+
+A Inter **não vem embutida** no pacote. O produto precisa carregar os pesos 300, 400, 500 e 700:
+
+```ts
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+```
+
+Marca em texto é a exceção: usa tracking de -2%, porque com -8% a marca fica ilegível.
+
+<TypeSpecimens />

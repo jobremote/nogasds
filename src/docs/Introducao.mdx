@@ -1,0 +1,98 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Hero, Stats, Principles, Cards, Showcase } from './blocks';
+
+<Meta title="Introdução" />
+
+<Hero>
+  Um design system neutro e coringa, que dá personalidade e fundamento a produtos experimentais.
+</Hero>
+
+<Stats />
+
+## Para que serve
+
+O NogasDS não pertence a nenhum produto. É a base reutilizada em tudo o que é concebido aqui: cada
+produto experimental já nasce com um visual coerente e com opinião, em vez de começar de uma tela em
+branco, e o sistema evolui com o que cada experimento revela.
+
+O objetivo é duplo. Primeiro, **dar caráter** aos produtos: um visual escuro, editorial e quadrado,
+com contraste feito de peso tipográfico e linhas finas. Segundo, servir de **chão de estudo** para
+construir design systems de produto: tokens, temas, componentes acessíveis e documentação, tudo no
+mesmo lugar e ligado ao Figma.
+
+<Showcase />
+
+## Princípios
+
+<Principles
+  items={[
+    {
+      title: 'Neutro e coringa',
+      text: 'Nenhum nome, texto ou cor de produto no sistema. O conteúdo pertence ao produto; o sistema só fornece a base.',
+    },
+    {
+      title: 'Escuro por padrão',
+      text: 'O tema escuro é o ponto de partida, com um tema claro equivalente. Cores de apoio aparecem só como apoio.',
+    },
+    {
+      title: 'Quadrado e fino',
+      text: 'Raio 0 (exceto círculos), hairlines de 1 px e foco de 2 px. Base de 4 px para todo espaçamento.',
+    },
+    {
+      title: 'Peso, não ornamento',
+      text: 'Inter com tracking apertado. O contraste vem da diferença entre Light e Bold, como no nome: Nogas e DS.',
+    },
+    {
+      title: 'Figma é a fonte da verdade',
+      text: 'Tokens e componentes em código seguem os arquivos do NogasDS no Figma, estado por estado.',
+    },
+    {
+      title: 'Acessível de origem',
+      text: 'Rótulo associado, foco visível, estados desabilitado e erro com descrição. Testado com jest-axe.',
+    },
+  ]}
+/>
+
+## O que há aqui
+
+<Cards
+  items={[
+    {
+      title: 'Cor',
+      text: 'Tokens Semantic nos temas escuro e claro.',
+      href: '../?path=/docs/fundamentos-cor--docs',
+    },
+    {
+      title: 'Tipografia',
+      text: 'Os 13 text styles de Inter.',
+      href: '../?path=/docs/fundamentos-tipografia--docs',
+    },
+    {
+      title: 'Espaço e forma',
+      text: 'Escala de 4 px, raios e traços.',
+      href: '../?path=/docs/fundamentos-espaço-e-forma--docs',
+    },
+    {
+      title: 'Componentes',
+      text: 'Botão, campo de texto, checkbox, campo de código, banner e link, com todos os estados.',
+      href: '../?path=/story/componentes-botão--todos-os-estados',
+    },
+  ]}
+/>
+
+## Usar em um produto
+
+O pacote ainda não está no npm. Instale direto do GitHub, por tag:
+
+```bash
+npm install github:jobremote/nogasds#v0.1.0
+```
+
+```tsx
+import 'nogasds/styles.css';
+import { Button, TextField } from 'nogasds';
+```
+
+A fonte Inter não vem embutida: carregue os pesos 300, 400, 500 e 700. O tema claro se ativa com
+`data-theme="light"` em qualquer ancestral. Detalhes no
+[README](https://github.com/jobremote/nogasds#readme).

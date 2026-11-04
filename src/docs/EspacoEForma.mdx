@@ -1,0 +1,24 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { SpaceScale, ShapeDemo } from './blocks';
+
+<Meta title="Fundamentos/Espaço e forma" />
+
+# Espaço e forma
+
+Tudo é múltiplo de **4 px**. Padding, gap, raio e espessura de traço usam sempre estas variáveis, que
+vêm da coleção **Dimensions** do Figma.
+
+## Espaço
+
+<SpaceScale />
+
+## Raio e traço
+
+O sistema é **quadrado**: raio 0 por padrão. `radius-full` existe só para círculos (avatar, switch).
+Linhas são finas: 1 px (`hairline`) para bordas e divisores, 2 px (`strong`) para foco.
+
+<ShapeDemo />
+
+## Navegação
+
+`--nds-layout-nav-height` fixa a altura da barra de navegação em **64 px**.

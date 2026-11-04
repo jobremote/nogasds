@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorPalette } from './blocks';
+
+<Meta title="Fundamentos/Cor" />
+
+# Cor
+
+Os tokens de cor são da coleção **Semantic** do Figma, com dois modos: **Escuro** (padrão) e **Claro**.
+Componentes usam só estes tokens, nunca valores soltos. A base é monocromática; vinho, petróleo, oliva,
+rosa e céu entram apenas como apoio (blocos, acentos e status).
+
+Cada token é uma variável CSS com prefixo `--nds-`. O tema claro se ativa com `data-theme="light"` em
+qualquer ancestral; use a barra de ferramentas do Storybook (Tema) para alternar aqui.
+
+```css
+.exemplo {
+  background: var(--nds-surface-raised);
+  color: var(--nds-text-primary);
+  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+```
+
+<ColorPalette />

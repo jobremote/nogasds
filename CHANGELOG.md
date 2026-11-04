@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [Não lançado]
+
+### Adicionado
+- Storybook com tema próprio (marca NogasDS), página de Introdução e Fundamentos (Cor, Tipografia, Espaço e forma).
+
 ## [0.1.0] - 2026-11-04
 
 Primeira entrega.
