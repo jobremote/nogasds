@@ -6,6 +6,8 @@ O **Figma é a fonte da verdade**: os tokens e componentes daqui seguem os arqui
 
 Versão atual: `0.1.0`. Ainda **não está publicado no npm**.
 
+Catálogo online (Storybook): https://jobremote.github.io/nogasds/
+
 ## Componentes da 0.1.0
 
 | Componente | Variantes e estados |
