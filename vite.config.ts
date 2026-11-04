@@ -19,6 +19,8 @@ export default defineConfig({
     cssCodeSplit: false,
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
+      // Os componentes usam hooks: no Next.js (App Router) precisam ser componentes de cliente.
+      output: { banner: "'use client';" },
     },
   },
   test: {
