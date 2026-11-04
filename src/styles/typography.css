@@ -1,0 +1,59 @@
+/*
+ * NogasDS · tipografia (Inter)
+ * Os 13 text styles do Foundations. Cada style tem:
+ *   --nds-type-<nome>           atalho `font` (peso, tamanho/altura de linha, família)
+ *   --nds-type-<nome>-tracking  espaçamento entre letras
+ * Uso:  font: var(--nds-type-label); letter-spacing: var(--nds-type-label-tracking);
+ * Também há classes utilitárias .nds-text-<nome>.
+ * A fonte Inter NÃO é embutida no pacote: veja a seção "Fonte Inter" do README.
+ */
+
+:root {
+  --nds-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Título */
+  --nds-type-display: 300 48px/48px var(--nds-font-family);
+  --nds-type-display-tracking: -0.08em;
+  --nds-type-display-forte: 700 48px/48px var(--nds-font-family);
+  --nds-type-display-forte-tracking: -0.08em;
+  --nds-type-headline: 700 32px/36px var(--nds-font-family);
+  --nds-type-headline-tracking: -0.08em;
+  --nds-type-title: 700 24px/26px var(--nds-font-family);
+  --nds-type-title-tracking: -0.08em;
+  --nds-type-subtitle: 300 24px/28px var(--nds-font-family);
+  --nds-type-subtitle-tracking: -0.08em;
+
+  /* Texto */
+  --nds-type-lead: 300 20px/24px var(--nds-font-family);
+  --nds-type-lead-tracking: -0.04em;
+  --nds-type-body: 400 16px/24px var(--nds-font-family);
+  --nds-type-body-tracking: -0.02em;
+  --nds-type-body-light: 300 16px/24px var(--nds-font-family);
+  --nds-type-body-light-tracking: -0.02em;
+  --nds-type-small: 400 14px/20px var(--nds-font-family);
+  --nds-type-small-tracking: -0.01em;
+  --nds-type-caption: 300 12px/16px var(--nds-font-family);
+  --nds-type-caption-tracking: 0em;
+
+  /* Interface */
+  --nds-type-label: 500 14px/20px var(--nds-font-family);
+  --nds-type-label-tracking: -0.01em;
+  --nds-type-label-small: 500 12px/16px var(--nds-font-family);
+  --nds-type-label-small-tracking: 0em;
+  --nds-type-overline: 500 12px/16px var(--nds-font-family);
+  --nds-type-overline-tracking: 0.04em;
+}
+
+.nds-text-display { font: var(--nds-type-display); letter-spacing: var(--nds-type-display-tracking); }
+.nds-text-display-forte { font: var(--nds-type-display-forte); letter-spacing: var(--nds-type-display-forte-tracking); }
+.nds-text-headline { font: var(--nds-type-headline); letter-spacing: var(--nds-type-headline-tracking); }
+.nds-text-title { font: var(--nds-type-title); letter-spacing: var(--nds-type-title-tracking); text-transform: uppercase; }
+.nds-text-subtitle { font: var(--nds-type-subtitle); letter-spacing: var(--nds-type-subtitle-tracking); }
+.nds-text-lead { font: var(--nds-type-lead); letter-spacing: var(--nds-type-lead-tracking); }
+.nds-text-body { font: var(--nds-type-body); letter-spacing: var(--nds-type-body-tracking); }
+.nds-text-body-light { font: var(--nds-type-body-light); letter-spacing: var(--nds-type-body-light-tracking); }
+.nds-text-small { font: var(--nds-type-small); letter-spacing: var(--nds-type-small-tracking); }
+.nds-text-caption { font: var(--nds-type-caption); letter-spacing: var(--nds-type-caption-tracking); }
+.nds-text-label { font: var(--nds-type-label); letter-spacing: var(--nds-type-label-tracking); }
+.nds-text-label-small { font: var(--nds-type-label-small); letter-spacing: var(--nds-type-label-small-tracking); }
+.nds-text-overline { font: var(--nds-type-overline); letter-spacing: var(--nds-type-overline-tracking); text-transform: uppercase; }

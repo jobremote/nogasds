@@ -1,0 +1,133 @@
+/*
+ * NogasDS · tokens
+ * Fonte de verdade: arquivos Foundations e Primitives do NogasDS no Figma.
+ * Tema escuro é o padrão (:root). Tema claro: data-theme="light" em qualquer ancestral.
+ */
+
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Superfícies */
+  --nds-surface-base: #252525;
+  --nds-surface-raised: #333333;
+  --nds-surface-sunken: #171717;
+  --nds-surface-inverse: #ffffff;
+
+  /* Bordas */
+  --nds-border-subtle: #333333;
+  --nds-border-default: #404040;
+  --nds-border-control: #858585;
+  --nds-border-strong: #cdcdcd;
+
+  /* Texto */
+  --nds-text-primary: #ffffff;
+  --nds-text-secondary: #cdcdcd;
+  --nds-text-muted: #a8a8a8;
+  --nds-text-disabled: #666666;
+  --nds-text-inverse: #252525;
+
+  /* Ação */
+  --nds-action-bg: #ffffff;
+  --nds-action-fg: #252525;
+  --nds-action-subtle-bg: #333333;
+
+  /* Link e foco */
+  --nds-link: #7cacc4;
+  --nds-link-hover: #91c0d7;
+  --nds-focus-ring: #7cacc4;
+
+  /* Blocos de cor (apoio) */
+  --nds-block-wine-bg: #44090f;
+  --nds-block-petrol-bg: #093145;
+  --nds-block-olive-bg: #454309;
+  --nds-block-fg: #ffffff;
+  --nds-block-fg-muted: #cdcdcd;
+
+  /* Acentos (apoio) */
+  --nds-accent-rose-bg: #9a4750;
+  --nds-accent-rose-fg: #ffffff;
+  --nds-accent-sky-bg: #7cacc4;
+  --nds-accent-sky-fg: #252525;
+
+  /* Status */
+  --nds-status-info-bg: #093145;
+  --nds-status-info-fg: #7cacc4;
+  --nds-status-info-border: #3e7997;
+  --nds-status-danger-bg: #44090f;
+  --nds-status-danger-fg: #c47a80;
+  --nds-status-danger-border: #b16067;
+  --nds-status-success-bg: #454309;
+  --nds-status-success-fg: #afaf8e;
+  --nds-status-success-border: #838255;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --nds-surface-base: #ffffff;
+  --nds-surface-raised: #f5f5f5;
+  --nds-surface-sunken: #e8e8e8;
+  --nds-surface-inverse: #252525;
+
+  --nds-border-subtle: #e8e8e8;
+  --nds-border-default: #cdcdcd;
+  --nds-border-control: #858585;
+  --nds-border-strong: #252525;
+
+  --nds-text-primary: #252525;
+  --nds-text-secondary: #4d4d4d;
+  --nds-text-muted: #666666;
+  --nds-text-disabled: #a8a8a8;
+  --nds-text-inverse: #ffffff;
+
+  --nds-action-bg: #252525;
+  --nds-action-fg: #ffffff;
+  --nds-action-subtle-bg: #e8e8e8;
+
+  --nds-link: #093145;
+  --nds-link-hover: #124862;
+  --nds-focus-ring: #093145;
+
+  --nds-block-wine-bg: #44090f;
+  --nds-block-petrol-bg: #093145;
+  --nds-block-olive-bg: #454309;
+  --nds-block-fg: #ffffff;
+  --nds-block-fg-muted: #cdcdcd;
+
+  --nds-accent-rose-bg: #9a4750;
+  --nds-accent-rose-fg: #ffffff;
+  --nds-accent-sky-bg: #7cacc4;
+  --nds-accent-sky-fg: #252525;
+
+  --nds-status-info-bg: #ebf7fe;
+  --nds-status-info-fg: #28607d;
+  --nds-status-info-border: #5693b1;
+  --nds-status-danger-bg: #fef2f2;
+  --nds-status-danger-fg: #9a4750;
+  --nds-status-danger-border: #c47a80;
+  --nds-status-success-bg: #f6f6e7;
+  --nds-status-success-fg: #6e6d3a;
+  --nds-status-success-border: #838255;
+}
+
+/* Dimensions (independem de tema). Base de 4 px. */
+:root {
+  --nds-space-1: 4px;
+  --nds-space-2: 8px;
+  --nds-space-3: 12px;
+  --nds-space-4: 16px;
+  --nds-space-6: 24px;
+  --nds-space-8: 32px;
+  --nds-space-12: 48px;
+  --nds-space-16: 64px;
+  --nds-space-24: 96px;
+
+  --nds-radius-none: 0;
+  --nds-radius-full: 9999px;
+
+  --nds-stroke-hairline: 1px;
+  --nds-stroke-strong: 2px;
+
+  --nds-layout-nav-height: 64px;
+}

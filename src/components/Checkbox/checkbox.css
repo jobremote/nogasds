@@ -1,0 +1,100 @@
+.nds-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nds-space-1);
+  color: var(--nds-text-primary);
+}
+
+.nds-checkbox__row {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--nds-space-2);
+  cursor: pointer;
+}
+
+/* O input nativo fica sobre a caixa, invisível, para manter foco e clique nativos. */
+.nds-checkbox__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.nds-checkbox__box {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-none);
+  background: var(--nds-surface-sunken);
+  color: var(--nds-text-primary);
+}
+.nds-checkbox__mark {
+  visibility: hidden;
+}
+
+.nds-checkbox__label {
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  color: var(--nds-text-primary);
+}
+
+/* Marcado */
+.nds-checkbox__input:checked + .nds-checkbox__box {
+  border-color: var(--nds-text-primary);
+}
+.nds-checkbox__input:checked + .nds-checkbox__box .nds-checkbox__mark {
+  visibility: visible;
+}
+
+/* Hover */
+.nds-checkbox__row:hover .nds-checkbox__input:not(:disabled) + .nds-checkbox__box {
+  border-color: var(--nds-border-strong);
+}
+
+/* Foco: anel de 2px por dentro */
+.nds-checkbox__input:focus-visible + .nds-checkbox__box {
+  border-color: var(--nds-focus-ring);
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-strong) * -1);
+}
+
+/* Erro */
+.nds-checkbox--invalid .nds-checkbox__input + .nds-checkbox__box {
+  border-color: var(--nds-status-danger-border);
+}
+.nds-checkbox__message {
+  margin: 0;
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-status-danger-fg);
+}
+
+/* Desabilitado */
+.nds-checkbox--disabled .nds-checkbox__row {
+  cursor: not-allowed;
+}
+.nds-checkbox--disabled .nds-checkbox__label {
+  color: var(--nds-text-disabled);
+}
+.nds-checkbox--disabled .nds-checkbox__box,
+.nds-checkbox--disabled .nds-checkbox__input:checked + .nds-checkbox__box,
+.nds-checkbox--disabled .nds-checkbox__row:hover .nds-checkbox__box {
+  border-color: var(--nds-border-subtle);
+  background: var(--nds-surface-raised);
+  color: var(--nds-text-disabled);
+}
+
+/* Links dentro do rótulo seguem o texto corrido, sem o respiro do componente Link. */
+.nds-checkbox__label .nds-link {
+  padding: 0;
+}
