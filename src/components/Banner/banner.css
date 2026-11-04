@@ -1,0 +1,53 @@
+.nds-banner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nds-space-3);
+  width: 100%;
+  padding: var(--nds-space-4);
+  border: var(--nds-stroke-hairline) solid;
+  border-radius: var(--nds-radius-none);
+}
+
+.nds-banner__icon {
+  margin-top: 0;
+}
+
+.nds-banner__text {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--nds-space-1);
+}
+
+.nds-banner__title,
+.nds-banner__description {
+  margin: 0;
+}
+.nds-banner__title {
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+  color: var(--nds-text-primary);
+}
+.nds-banner__description {
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  color: var(--nds-text-secondary);
+}
+
+.nds-banner--info {
+  background: var(--nds-status-info-bg);
+  border-color: var(--nds-status-info-border);
+  color: var(--nds-status-info-fg);
+}
+.nds-banner--success {
+  background: var(--nds-status-success-bg);
+  border-color: var(--nds-status-success-border);
+  color: var(--nds-status-success-fg);
+}
+.nds-banner--error {
+  background: var(--nds-status-danger-bg);
+  border-color: var(--nds-status-danger-border);
+  color: var(--nds-status-danger-fg);
+}

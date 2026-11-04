@@ -1,0 +1,85 @@
+.nds-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 0 solid transparent;
+  border-radius: var(--nds-radius-none);
+  background: transparent;
+  color: var(--nds-text-primary);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tamanhos */
+.nds-button--md {
+  padding: var(--nds-space-3) var(--nds-space-6);
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-button--sm {
+  padding: var(--nds-space-2) var(--nds-space-4);
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+}
+
+/* Primário */
+.nds-button--primary {
+  background: var(--nds-action-bg);
+  color: var(--nds-action-fg);
+}
+.nds-button--primary:hover:not(:disabled) {
+  background: var(--nds-text-secondary);
+}
+
+/* Secundário */
+.nds-button--secondary {
+  background: var(--nds-action-subtle-bg);
+  color: var(--nds-text-primary);
+}
+.nds-button--secondary:hover:not(:disabled) {
+  background: var(--nds-border-default);
+}
+
+/* Contorno */
+.nds-button--outline {
+  border-width: var(--nds-stroke-hairline);
+  border-color: var(--nds-border-control);
+  color: var(--nds-text-primary);
+}
+.nds-button--outline:hover:not(:disabled) {
+  background: var(--nds-action-subtle-bg);
+}
+
+/* Fantasma */
+.nds-button--ghost {
+  color: var(--nds-text-primary);
+}
+.nds-button--ghost:hover:not(:disabled) {
+  background: var(--nds-action-subtle-bg);
+}
+
+/* Foco: anel de 2px por fora */
+.nds-button:focus-visible {
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}
+.nds-button--outline:focus-visible {
+  border-color: transparent;
+}
+
+/* Desabilitado */
+.nds-button:disabled {
+  cursor: not-allowed;
+  color: var(--nds-text-disabled);
+}
+.nds-button--primary:disabled,
+.nds-button--secondary:disabled {
+  background: var(--nds-action-subtle-bg);
+}
+.nds-button--outline:disabled {
+  border-color: var(--nds-border-subtle);
+}

@@ -1,0 +1,49 @@
+html,
+body,
+#storybook-root {
+  background: var(--nds-surface-base);
+  color: var(--nds-text-primary);
+  font: var(--nds-type-body);
+  letter-spacing: var(--nds-type-body-tracking);
+}
+body {
+  margin: 0;
+}
+.sb-canvas {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: var(--nds-space-6);
+  background: var(--nds-surface-base);
+}
+.sb-section {
+  margin: 0 0 var(--nds-space-8);
+}
+.sb-section > h3 {
+  margin: 0 0 var(--nds-space-4);
+  font: var(--nds-type-overline);
+  letter-spacing: var(--nds-type-overline-tracking);
+  text-transform: uppercase;
+  color: var(--nds-text-muted);
+}
+.sb-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--nds-space-6);
+}
+.sb-cell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nds-space-2);
+  align-items: flex-start;
+}
+.sb-cell > small {
+  font: var(--nds-type-caption);
+  color: var(--nds-text-muted);
+}
+.sb-w320 {
+  width: 320px;
+}
+.sb-w480 {
+  width: 480px;
+}

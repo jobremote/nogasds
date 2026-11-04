@@ -1,0 +1,86 @@
+.nds-text-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nds-space-2);
+  width: 100%;
+  color: var(--nds-text-primary);
+}
+
+.nds-text-field__label {
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+  color: var(--nds-text-primary);
+}
+
+.nds-text-field__control {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-2);
+  height: 40px;
+  padding: 0 var(--nds-space-3);
+  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-none);
+  background: var(--nds-surface-sunken);
+}
+.nds-text-field__control:hover {
+  border-color: var(--nds-border-strong);
+}
+.nds-text-field__control:focus-within {
+  border-color: transparent;
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}
+
+.nds-text-field__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--nds-text-primary);
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+}
+.nds-text-field__input::placeholder {
+  color: var(--nds-text-muted);
+  opacity: 1;
+}
+
+.nds-text-field__message {
+  margin: 0;
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}
+
+/* Erro */
+.nds-text-field--invalid .nds-text-field__control {
+  border-color: var(--nds-status-danger-border);
+}
+.nds-text-field--invalid .nds-text-field__control:focus-within {
+  border-color: transparent;
+}
+.nds-text-field--invalid .nds-text-field__message {
+  color: var(--nds-status-danger-fg);
+}
+
+/* Desabilitado */
+.nds-text-field--disabled .nds-text-field__label,
+.nds-text-field--disabled .nds-text-field__message {
+  color: var(--nds-text-disabled);
+}
+.nds-text-field--disabled .nds-text-field__control,
+.nds-text-field--disabled .nds-text-field__control:hover {
+  border-color: var(--nds-border-subtle);
+  background: var(--nds-surface-raised);
+}
+.nds-text-field__input:disabled {
+  cursor: not-allowed;
+  color: var(--nds-text-disabled);
+}
+.nds-text-field__input:disabled::placeholder {
+  color: var(--nds-text-disabled);
+}
