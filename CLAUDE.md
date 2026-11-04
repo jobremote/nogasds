@@ -37,6 +37,7 @@ src/
   styles/typography.css   13 text styles de Inter
   components/<Nome>/      <Nome>.tsx, <nome>.css, <Nome>.stories.tsx, <Nome>.test.tsx
   components/Icon/paths.ts   `d` dos SVGs exportados do Figma
+  docs/                   páginas MDX do Storybook (Introdução, Fundamentos) e seus blocos; leem os tokens dos CSS, não entram no pacote
   index.ts                API pública (único ponto de entrada)
 .storybook/               catálogo (fundo escuro do sistema, alternador de tema)
 ```
@@ -49,6 +50,7 @@ src/
 - **Acessibilidade (obrigatória):** rótulo associado (`label`/`htmlFor` ou `aria-labelledby`), foco visível (`:focus-visible`, anel de 2 px), estados `disabled` nativos, erro com `aria-invalid` e mensagem ligada por `aria-describedby`. `forwardRef` nos componentes que envolvem elemento nativo.
 - **Estados:** todo estado e variante do Figma tem que existir no código e na história `TodosOsEstados`. Hover e foco aparecem no Storybook pelo addon `storybook-addon-pseudo-states`.
 - **Testes:** um `.test.tsx` por componente, com comportamento (clique, teclado, controlado) e `jest-axe` sem violações.
+- **Documentação:** páginas em `src/docs/*.mdx`. Os blocos leem os valores de `tokens.css` e `typography.css`, então não repita valores de token à mão. Estilos de bloco ficam prefixados com `.sbdocs-content` para vencer o CSS padrão do Storybook. O tema da interface está em `.storybook/theme.ts`.
 - **Ícones:** vêm da biblioteca Icons do Figma, exportados como SVG para `src/components/Icon/paths.ts`. Não desenhe ícone solto.
 
 ## Comandos

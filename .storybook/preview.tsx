@@ -5,6 +5,7 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '../src/styles/index.css';
 import './preview.css';
+import theme from './theme';
 
 const withTheme: Decorator = (Story, context) => {
   const theme = context.globals.theme === 'light' ? 'light' : 'dark';
@@ -37,6 +38,12 @@ const preview: Preview = {
     layout: 'fullscreen',
     backgrounds: { disable: true },
     controls: { expanded: true },
+    docs: { theme },
+    options: {
+      storySort: {
+        order: ['Introdução', 'Fundamentos', ['Cor', 'Tipografia', 'Espaço e forma'], 'Componentes'],
+      },
+    },
   },
 };
 

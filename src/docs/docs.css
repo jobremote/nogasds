@@ -1,0 +1,296 @@
+/* Estilos só da documentação (Storybook); não entram no pacote. */
+
+.sbdocs-content .nds-doc-hero {
+  padding: var(--nds-space-12) 0 var(--nds-space-8);
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+.sbdocs-content .nds-doc-eyebrow,
+.sbdocs-content .nds-doc-overline {
+  margin: 0 0 var(--nds-space-4);
+  font: var(--nds-type-overline);
+  letter-spacing: var(--nds-type-overline-tracking);
+  text-transform: uppercase;
+  color: var(--nds-text-muted);
+}
+.sbdocs-content .nds-doc-wordmark {
+  display: block;
+  margin-bottom: var(--nds-space-6);
+  font-family: var(--nds-font-family);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--nds-text-primary);
+}
+.sbdocs-content .nds-doc-lead {
+  max-width: 40ch;
+  margin: 0;
+  font: var(--nds-type-lead);
+  letter-spacing: var(--nds-type-lead-tracking);
+  color: var(--nds-text-secondary);
+}
+
+.sbdocs-content .nds-doc-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: var(--nds-space-8) 0;
+  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+.sbdocs-content .nds-doc-stats > div {
+  padding: var(--nds-space-6);
+  border-right: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+.sbdocs-content .nds-doc-stats > div:last-child {
+  border-right: 0;
+}
+.sbdocs-content .nds-doc-stats dt {
+  font: var(--nds-type-display);
+  letter-spacing: var(--nds-type-display-tracking);
+  color: var(--nds-text-primary);
+}
+.sbdocs-content .nds-doc-stats dd {
+  margin: var(--nds-space-2) 0 0;
+  font: var(--nds-type-small);
+  color: var(--nds-text-muted);
+}
+
+.sbdocs-content .nds-doc-principles,
+.sbdocs-content .nds-doc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin: var(--nds-space-6) 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border-left: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+.sbdocs-content .nds-doc-principles li,
+.sbdocs-content .nds-doc-cards li {
+  margin: 0;
+  padding: var(--nds-space-6);
+  border-right: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+.sbdocs-content .nds-doc-principles h3,
+.sbdocs-content .nds-doc-cards h3 {
+  margin: 0 0 var(--nds-space-2);
+  font: var(--nds-type-title);
+  letter-spacing: var(--nds-type-title-tracking);
+  text-transform: uppercase;
+  color: var(--nds-text-primary);
+}
+.sbdocs-content .nds-doc-principles p,
+.sbdocs-content .nds-doc-cards p {
+  margin: 0;
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  color: var(--nds-text-secondary);
+}
+.sbdocs-content .nds-doc-index {
+  display: block;
+  margin-bottom: var(--nds-space-8);
+  font: var(--nds-type-overline);
+  letter-spacing: var(--nds-type-overline-tracking);
+  color: var(--nds-text-muted);
+}
+.sbdocs-content .nds-doc-cards a {
+  display: flex;
+  min-height: 140px;
+  flex-direction: column;
+  gap: var(--nds-space-2);
+  margin: calc(var(--nds-space-6) * -1);
+  padding: var(--nds-space-6);
+  color: inherit;
+  text-decoration: none;
+}
+.sbdocs-content .nds-doc-cards a:hover {
+  background: var(--nds-surface-raised);
+}
+.sbdocs-content .nds-doc-cards a:focus-visible {
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-strong) * -1);
+}
+.sbdocs-content .nds-doc-cards a span {
+  margin-top: auto;
+  font: var(--nds-type-label);
+  color: var(--nds-link);
+}
+
+.sbdocs-content .nds-doc-showcase {
+  margin: var(--nds-space-6) 0;
+  padding: var(--nds-space-8);
+  background: var(--nds-surface-sunken);
+  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+.sbdocs-content .nds-doc-showcase__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nds-space-4);
+}
+
+.sbdocs-content .nds-doc-colors section,
+.sbdocs-content .nds-doc-types section {
+  margin-bottom: var(--nds-space-8);
+}
+.sbdocs-content .nds-doc-colors__head,
+.sbdocs-content .nds-doc-colors__row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.4fr) 1fr 1fr;
+  gap: var(--nds-space-4);
+  align-items: center;
+  padding: var(--nds-space-2) 0;
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+}
+.sbdocs-content .nds-doc-colors__head {
+  font: var(--nds-type-overline);
+  letter-spacing: var(--nds-type-overline-tracking);
+  text-transform: uppercase;
+  color: var(--nds-text-muted);
+}
+.sbdocs-content .nds-doc-colors__row code,
+.sbdocs-content .nds-doc-types__meta code {
+  display: block;
+  font: var(--nds-type-label);
+  color: var(--nds-text-primary);
+}
+.sbdocs-content .nds-doc-colors__row small,
+.sbdocs-content .nds-doc-types__meta small {
+  display: block;
+  font: var(--nds-type-caption);
+  color: var(--nds-text-muted);
+}
+.sbdocs-content .nds-doc-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-3);
+  font: var(--nds-type-small);
+  font-variant-numeric: tabular-nums;
+  color: var(--nds-text-secondary);
+}
+.sbdocs-content .nds-doc-chip span {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
+}
+
+.sbdocs-content .nds-doc-types__row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 3fr;
+  gap: var(--nds-space-6);
+  align-items: baseline;
+  padding: var(--nds-space-4) 0;
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+}
+.sbdocs-content .nds-doc-types__row p {
+  margin: 0;
+  color: var(--nds-text-primary);
+}
+
+.sbdocs-content .nds-doc-space__row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 3fr;
+  gap: var(--nds-space-6);
+  align-items: center;
+  padding: var(--nds-space-2) 0;
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+}
+.sbdocs-content .nds-doc-space__bar {
+  height: var(--nds-space-4);
+  background: var(--nds-text-primary);
+}
+
+.sbdocs-content .nds-doc-shapes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nds-space-8);
+  margin: var(--nds-space-6) 0;
+}
+.sbdocs-content .nds-doc-shapes figure {
+  margin: 0;
+}
+.sbdocs-content .nds-doc-shape {
+  display: block;
+  width: 96px;
+  height: 96px;
+  box-sizing: border-box;
+  border: var(--nds-stroke-hairline) solid var(--nds-border-strong);
+  background: var(--nds-surface-sunken);
+}
+.sbdocs-content .nds-doc-shapes figcaption {
+  margin-top: var(--nds-space-3);
+}
+.sbdocs-content .nds-doc-shapes code {
+  display: block;
+  font: var(--nds-type-label);
+  color: var(--nds-text-primary);
+}
+.sbdocs-content .nds-doc-shapes small {
+  display: block;
+  font: var(--nds-type-caption);
+  color: var(--nds-text-muted);
+}
+
+/* Neutraliza os estilos de texto do tema de documentação do Storybook dentro dos blocos. */
+.sbdocs-content .nds-doc-wordmark span {
+  font: inherit;
+  letter-spacing: inherit;
+}
+.sbdocs-content .nds-doc-wordmark {
+  margin-top: 0;
+}
+.sbdocs-content .nds-doc-stats dt,
+.sbdocs-content .nds-doc-stats dd {
+  font-style: normal;
+  padding: 0;
+}
+.sbdocs-content .nds-doc-stats dd {
+  margin: var(--nds-space-2) 0 0;
+}
+.sbdocs-content .nds-doc-principles li,
+.sbdocs-content .nds-doc-cards li {
+  list-style: none;
+}
+.sbdocs-content .nds-doc-colors code,
+.sbdocs-content .nds-doc-types code,
+.sbdocs-content .nds-doc-shapes code,
+.sbdocs-content .nds-doc-space code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--nds-font-family);
+}
+
+.sbdocs-content .nds-doc-cards li {
+  display: flex;
+}
+.sbdocs-content .nds-doc-cards a {
+  flex: 1;
+}
+
+/* Títulos das páginas de documentação seguem os text styles do sistema. */
+.sbdocs-content h1 {
+  font: var(--nds-type-headline);
+  letter-spacing: var(--nds-type-headline-tracking);
+  border-bottom: 0;
+}
+.sbdocs-content h2 {
+  margin-top: var(--nds-space-12);
+  font: var(--nds-type-title);
+  letter-spacing: var(--nds-type-title-tracking);
+  text-transform: uppercase;
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-default);
+}
+
+/* Os text styles vencem os estilos de parágrafo do Storybook. */
+.sbdocs-content .nds-text-display { font: var(--nds-type-display); letter-spacing: var(--nds-type-display-tracking); }
+.sbdocs-content .nds-text-display-forte { font: var(--nds-type-display-forte); letter-spacing: var(--nds-type-display-forte-tracking); }
+.sbdocs-content .nds-text-headline { font: var(--nds-type-headline); letter-spacing: var(--nds-type-headline-tracking); }
+.sbdocs-content .nds-text-title { font: var(--nds-type-title); letter-spacing: var(--nds-type-title-tracking); text-transform: uppercase; }
+.sbdocs-content .nds-text-subtitle { font: var(--nds-type-subtitle); letter-spacing: var(--nds-type-subtitle-tracking); }
+.sbdocs-content .nds-text-lead { font: var(--nds-type-lead); letter-spacing: var(--nds-type-lead-tracking); }
+.sbdocs-content .nds-text-body { font: var(--nds-type-body); letter-spacing: var(--nds-type-body-tracking); }
+.sbdocs-content .nds-text-body-light { font: var(--nds-type-body-light); letter-spacing: var(--nds-type-body-light-tracking); }
+.sbdocs-content .nds-text-small { font: var(--nds-type-small); letter-spacing: var(--nds-type-small-tracking); }
+.sbdocs-content .nds-text-caption { font: var(--nds-type-caption); letter-spacing: var(--nds-type-caption-tracking); }
+.sbdocs-content .nds-text-label { font: var(--nds-type-label); letter-spacing: var(--nds-type-label-tracking); }
+.sbdocs-content .nds-text-label-small { font: var(--nds-type-label-small); letter-spacing: var(--nds-type-label-small-tracking); }
+.sbdocs-content .nds-text-overline { font: var(--nds-type-overline); letter-spacing: var(--nds-type-overline-tracking); text-transform: uppercase; }
