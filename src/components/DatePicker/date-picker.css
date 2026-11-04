@@ -1,0 +1,77 @@
+.nds-date-picker {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--nds-space-3);
+  padding: var(--nds-space-4);
+  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border-radius: var(--nds-radius-none);
+  background: var(--nds-surface-raised);
+  color: var(--nds-text-primary);
+}
+
+.nds-date-picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nds-date-picker__title {
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+  color: var(--nds-text-primary);
+}
+
+.nds-date-picker__grid {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.nds-date-picker__grid td,
+.nds-date-picker__grid th {
+  width: 40px;
+  padding: 0;
+  text-align: center;
+}
+.nds-date-picker__weekday {
+  height: 24px;
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+  color: var(--nds-text-muted);
+}
+
+.nds-date-picker__day {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: var(--nds-stroke-hairline) solid transparent;
+  border-radius: var(--nds-radius-none);
+  background: transparent;
+  color: var(--nds-text-primary);
+  cursor: pointer;
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+}
+.nds-date-picker__day:hover:not(:disabled) {
+  background: var(--nds-action-subtle-bg);
+}
+.nds-date-picker__day--today {
+  border-color: var(--nds-border-strong);
+}
+.nds-date-picker__day--outside {
+  color: var(--nds-text-muted);
+}
+.nds-date-picker__day--selected,
+.nds-date-picker__day--selected:hover:not(:disabled) {
+  background: var(--nds-action-bg);
+  border-color: var(--nds-action-bg);
+  color: var(--nds-action-fg);
+}
+.nds-date-picker__day:focus-visible {
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-strong) * -1);
+}
+.nds-date-picker__day:disabled {
+  cursor: not-allowed;
+  color: var(--nds-text-disabled);
+}

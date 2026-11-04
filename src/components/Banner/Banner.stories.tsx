@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Banner } from './Banner';
 
 const meta = {
-  title: 'Componentes/Banner',
+  title: 'Componentes/Feedback/Banner',
   component: Banner,
   args: { title: 'Título', children: 'Descrição' },
   argTypes: { variant: { control: 'inline-radio', options: ['info', 'success', 'error'] } },

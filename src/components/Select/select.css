@@ -1,0 +1,24 @@
+.nds-select__input {
+  appearance: none;
+  cursor: pointer;
+  /* Sem valor escolhido o texto fica no tom de placeholder (ver regra abaixo). */
+}
+.nds-select__input:required:invalid,
+.nds-select__input:has(option[value='']:checked) {
+  color: var(--nds-text-muted);
+}
+.nds-select__input option {
+  background: var(--nds-surface-raised);
+  color: var(--nds-text-primary);
+}
+.nds-select__arrow {
+  margin-right: calc(var(--nds-space-1) * -1);
+  color: var(--nds-text-secondary);
+  pointer-events: none;
+}
+.nds-text-field--disabled .nds-select__arrow {
+  color: var(--nds-text-disabled);
+}
+.nds-text-field--disabled .nds-select__input:disabled {
+  color: var(--nds-text-disabled);
+}

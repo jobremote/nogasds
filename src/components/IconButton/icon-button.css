@@ -1,0 +1,16 @@
+/* Reaproveita as variantes e estados do Botão; só muda a geometria. */
+.nds-button.nds-icon-button {
+  padding: 0;
+}
+.nds-icon-button--md {
+  width: 40px;
+  height: 40px;
+}
+.nds-icon-button--sm {
+  width: 32px;
+  height: 32px;
+}
+/* Com borda de 1 px (contorno) o ícone continua centralizado em 40 e 32 px. */
+.nds-button--outline.nds-icon-button {
+  box-sizing: border-box;
+}

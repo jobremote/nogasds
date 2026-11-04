@@ -4,21 +4,27 @@ Design system **neutro e coringa** (tokens e componentes React), pensado para se
 
 O **Figma é a fonte da verdade**: os tokens e componentes daqui seguem os arquivos do NogasDS no Figma (Primitives, Foundations, Components e Icons).
 
-Versão atual: `0.1.0`. Ainda **não está publicado no npm**.
+Versão atual: `0.2.0`. Ainda **não está publicado no npm**.
 
 Catálogo online (Storybook): https://jobremote.github.io/nogasds/
 
-## Componentes da 0.1.0
+## Componentes
 
-| Componente | Variantes e estados |
+Na `0.2.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
+
+| Grupo | Componentes |
 | --- | --- |
-| `Button` | `primary`, `secondary`, `outline`, `ghost` × `md`, `sm`; padrão, hover, foco, desabilitado |
-| `TextField` | rótulo, `placeholder`, `helpText`, `error`, `endSlot`; padrão, hover, foco, erro, desabilitado |
-| `Checkbox` | marcado/desmarcado; padrão, hover, foco, erro, desabilitado; rótulo com links |
-| `CodeField` | 6 dígitos (configurável); padrão, foco, erro, desabilitado; foco automático, colar código inteiro, backspace voltando |
-| `Banner` | `info`, `success`, `error`; título e descrição |
-| `Link` | `md`, `sm`; padrão, hover, foco, desabilitado |
-| `Icon` | subconjunto dos ícones do Figma (veja `iconPaths`) |
+| Botões | `Button` (4 variantes × 2 tamanhos), `IconButton` |
+| Formulários | `TextField`, `TextArea`, `Select` (combo box), `DateField` + `DatePicker`, `Rating`, `CodeField`, `SearchField` |
+| Seleção | `Checkbox`, `Radio`, `Switch`, `Tag` |
+| Feedback | `Banner`, `Badge` |
+| Avatar | `Avatar` |
+| Navegação | `Link`, `MenuItem`, `Tabs`, `TopBar` e `MobileTopBar`, `TabBar` |
+| Conteúdo | `Card`, `Stat`, `ProfileSummary`, `SuggestedAccount`, `Promo` |
+| Feed | `PostComposer`, `Post` e `PostAction` |
+| Base | `Icon` (subconjunto dos ícones do Figma) |
+
+Todos têm os estados e variantes do Figma e foco visível; os de formulário têm rótulo associado, `aria-invalid` e descrição de ajuda ou erro. O catálogo online mostra cada estado.
 
 ## Usar em um produto
 
@@ -26,7 +32,7 @@ Enquanto não há publicação no npm, instale direto do GitHub (por tag) ou por
 
 ```bash
 # Dependência do GitHub, travada em uma versão
-npm install github:jobremote/nogasds#v0.1.0
+npm install github:jobremote/nogasds#v0.2.0
 ```
 
 O pacote é construído na instalação (script `prepare`), então precisa de Node 20+ e das devDependencies do próprio pacote, que o npm instala sozinho para dependências git.
@@ -129,10 +135,11 @@ Mais detalhes das convenções em [CLAUDE.md](./CLAUDE.md).
 
 ### Versionamento e releases
 
-[Versionamento semântico](https://semver.org/lang/pt-BR/), com **uma tag por versão** (`v0.1.0`). Enquanto estiver na `0.x`, mudanças incompatíveis sobem a versão menor. Registre as mudanças no [CHANGELOG.md](./CHANGELOG.md). A publicação no npm ainda não existe.
+[Versionamento semântico](https://semver.org/lang/pt-BR/), com **uma tag por versão** (`v0.2.0`). Enquanto estiver na `0.x`, mudanças incompatíveis sobem a versão menor. Registre as mudanças no [CHANGELOG.md](./CHANGELOG.md). A publicação no npm ainda não existe.
 
 ## Lacunas conhecidas
 
-- Os ícones são um subconjunto da biblioteca do Figma; os demais entram sob demanda.
-- Faltam os demais componentes do NogasDS (Avatar, Tag, Card, navegação e feed).
+- Os ícones são um subconjunto da biblioteca do Figma (29 de 57); os demais entram sob demanda com `node scripts/import-icons.mjs <pasta>`.
+- Os componentes de composição (`TopBar`, `Post`, `PostComposer`, `ProfileSummary`...) usam slots e textos genéricos; conteúdo e marca são do produto.
+- `Select` usa o `<select>` nativo (a lista aberta ainda não existe no Figma).
 - O `Link` não tem integração com roteadores (por exemplo, o `Link` do Next.js); para navegação no cliente, use o `<a>` do componente dentro do roteador do produto.

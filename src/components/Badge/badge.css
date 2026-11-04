@@ -1,0 +1,43 @@
+.nds-badge {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--nds-space-1) var(--nds-space-2);
+  border: var(--nds-stroke-hairline) solid transparent;
+  border-radius: var(--nds-radius-none);
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+  white-space: nowrap;
+}
+
+.nds-badge--neutral {
+  background: var(--nds-action-subtle-bg);
+  border-color: var(--nds-border-default);
+  color: var(--nds-text-primary);
+}
+.nds-badge--info {
+  background: var(--nds-status-info-bg);
+  border-color: var(--nds-status-info-border);
+  color: var(--nds-status-info-fg);
+}
+.nds-badge--success {
+  background: var(--nds-status-success-bg);
+  border-color: var(--nds-status-success-border);
+  color: var(--nds-status-success-fg);
+}
+.nds-badge--error {
+  background: var(--nds-status-danger-bg);
+  border-color: var(--nds-status-danger-border);
+  color: var(--nds-status-danger-fg);
+}
+/* Rosa e Céu não têm borda no Figma (24 px de altura contra 26 px). */
+.nds-badge--rose {
+  border-width: 0;
+  background: var(--nds-accent-rose-bg);
+  color: var(--nds-accent-rose-fg);
+}
+.nds-badge--sky {
+  border-width: 0;
+  background: var(--nds-accent-sky-bg);
+  color: var(--nds-accent-sky-fg);
+}

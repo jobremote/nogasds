@@ -27,7 +27,7 @@ export function Stats() {
     [String(colorTokenCount()), 'tokens de cor'],
     ['2', 'temas: escuro e claro'],
     [String(typeStyles().length), 'text styles de Inter'],
-    ['6', 'componentes'],
+    ['29', 'componentes'],
   ];
   return (
     <dl className="nds-doc-stats">

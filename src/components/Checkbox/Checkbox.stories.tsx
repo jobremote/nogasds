@@ -3,7 +3,7 @@ import { Link } from '../Link/Link';
 import { Checkbox } from './Checkbox';
 
 const meta = {
-  title: 'Componentes/Checkbox',
+  title: 'Componentes/Seleção/Checkbox',
   component: Checkbox,
   args: { label: 'Rótulo' },
 } satisfies Meta<typeof Checkbox>;

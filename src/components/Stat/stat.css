@@ -1,0 +1,17 @@
+.nds-stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--nds-space-1);
+  margin: 0;
+}
+.nds-stat__value {
+  margin: 0;
+  font: var(--nds-type-headline);
+  letter-spacing: var(--nds-type-headline-tracking);
+  color: var(--nds-text-primary);
+}
+.nds-stat__label {
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}

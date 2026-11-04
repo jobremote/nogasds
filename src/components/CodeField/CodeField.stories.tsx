@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CodeField } from './CodeField';
 
 const meta = {
-  title: 'Componentes/Campo de código',
+  title: 'Componentes/Formulários/Campo de código',
   component: CodeField,
   args: { label: 'Código de verificação', helpText: 'Texto de ajuda opcional.' },
 } satisfies Meta<typeof CodeField>;

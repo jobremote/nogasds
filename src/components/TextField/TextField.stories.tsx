@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TextField } from './TextField';
 
 const meta = {
-  title: 'Componentes/Campo de texto',
+  title: 'Componentes/Formulários/Campo de texto',
   component: TextField,
   args: { label: 'Rótulo', placeholder: 'Digite aqui', helpText: 'Texto de ajuda opcional.' },
 } satisfies Meta<typeof TextField>;
