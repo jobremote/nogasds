@@ -1,0 +1,32 @@
+.nds-menu-item {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-3);
+  width: 100%;
+  margin: 0;
+  padding: var(--nds-space-3);
+  border: 0;
+  border-radius: var(--nds-radius-none);
+  background: transparent;
+  color: var(--nds-text-secondary);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  font: var(--nds-type-lead);
+  letter-spacing: var(--nds-type-lead-tracking);
+}
+.nds-menu-item:hover {
+  background: var(--nds-action-subtle-bg);
+  color: var(--nds-text-primary);
+}
+/* Ativo: fundo sutil e barra de 2 px à esquerda. */
+.nds-menu-item--active {
+  background: var(--nds-action-subtle-bg);
+  color: var(--nds-text-primary);
+  box-shadow: inset var(--nds-stroke-strong) 0 0 var(--nds-action-bg);
+}
+.nds-menu-item:focus-visible {
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-strong) * -1);
+}

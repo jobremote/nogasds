@@ -1,0 +1,32 @@
+.nds-rating {
+  display: inline-flex;
+  gap: var(--nds-space-1);
+}
+
+.nds-rating__button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--nds-radius-none);
+  background: transparent;
+  cursor: pointer;
+}
+.nds-rating__button:focus-visible {
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}
+.nds-rating__button:disabled {
+  cursor: not-allowed;
+}
+
+.nds-rating__star {
+  color: var(--nds-text-muted);
+}
+.nds-rating__star--on {
+  color: var(--nds-text-primary);
+}
+.nds-rating--disabled .nds-rating__star,
+.nds-rating--disabled .nds-rating__star--on {
+  color: var(--nds-text-disabled);
+}

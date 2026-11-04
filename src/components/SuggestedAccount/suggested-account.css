@@ -1,0 +1,31 @@
+.nds-suggested-account {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-3);
+  padding: var(--nds-space-3) 0;
+  color: var(--nds-text-primary);
+}
+.nds-suggested-account__names {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--nds-space-1);
+}
+.nds-suggested-account__name,
+.nds-suggested-account__handle {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nds-suggested-account__name {
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-suggested-account__handle {
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}

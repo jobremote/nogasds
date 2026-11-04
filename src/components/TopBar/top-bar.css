@@ -1,0 +1,46 @@
+.nds-top-bar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  /* 40 px: no Figma o espaço entre marca, busca e ações não está na escala de 4 px (8 × 5). */
+  gap: calc(var(--nds-space-8) + var(--nds-space-2));
+  width: 100%;
+  height: var(--nds-layout-nav-height);
+  padding: var(--nds-space-2) 60px;
+  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+  background: var(--nds-surface-base);
+  color: var(--nds-text-primary);
+}
+.nds-top-bar__brand {
+  display: flex;
+  flex: 0 0 280px;
+  align-items: center;
+  font: var(--nds-type-title);
+  letter-spacing: -0.02em;
+}
+.nds-top-bar__search {
+  flex: 1 1 640px;
+  max-width: 640px;
+}
+.nds-top-bar__actions {
+  display: flex;
+  flex: 0 0 320px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--nds-space-3);
+}
+
+/* Mobile: 56 px, marca e ações nas pontas. */
+.nds-top-bar--mobile {
+  justify-content: space-between;
+  gap: 0;
+  height: 56px;
+  padding: 0 var(--nds-space-4);
+}
+.nds-top-bar--mobile .nds-top-bar__brand {
+  flex: 0 1 auto;
+}
+.nds-top-bar--mobile .nds-top-bar__actions {
+  flex: 0 0 auto;
+  gap: var(--nds-space-2);
+}

@@ -41,7 +41,13 @@ const preview: Preview = {
     docs: { theme },
     options: {
       storySort: {
-        order: ['Introdução', 'Fundamentos', ['Cor', 'Tipografia', 'Espaço e forma'], 'Componentes'],
+        order: [
+          'Introdução',
+          'Fundamentos',
+          ['Cor', 'Tipografia', 'Espaço e forma'],
+          'Componentes',
+          ['Botões', 'Formulários', 'Seleção', 'Feedback', 'Avatar', 'Navegação', 'Conteúdo', 'Feed'],
+        ],
       },
     },
   },

@@ -1,0 +1,31 @@
+.nds-date-field {
+  position: relative;
+  width: 100%;
+}
+.nds-date-field__toggle {
+  display: inline-flex;
+  margin: 0;
+  padding: var(--nds-space-1);
+  border: 0;
+  border-radius: var(--nds-radius-none);
+  background: transparent;
+  color: var(--nds-text-secondary);
+  cursor: pointer;
+}
+.nds-date-field__toggle:hover:not(:disabled) {
+  color: var(--nds-text-primary);
+}
+.nds-date-field__toggle:focus-visible {
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}
+.nds-date-field__toggle:disabled {
+  cursor: not-allowed;
+  color: var(--nds-text-disabled);
+}
+.nds-date-field__popover {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + var(--nds-space-2));
+  left: 0;
+}

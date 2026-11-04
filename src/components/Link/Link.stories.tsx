@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Link } from './Link';
 
 const meta = {
-  title: 'Componentes/Link',
+  title: 'Componentes/Navegação/Link',
   component: Link,
   args: { children: 'Ver detalhes', href: '#' },
   argTypes: { size: { control: 'inline-radio', options: ['md', 'sm'] } },

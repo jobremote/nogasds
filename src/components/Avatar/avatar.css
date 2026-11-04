@@ -1,0 +1,54 @@
+.nds-avatar {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--nds-radius-full);
+  user-select: none;
+}
+
+.nds-avatar--sm {
+  width: 32px;
+  height: 32px;
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+}
+.nds-avatar--md {
+  width: 40px;
+  height: 40px;
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-avatar--lg {
+  width: 56px;
+  height: 56px;
+  font: var(--nds-type-lead);
+  letter-spacing: var(--nds-type-lead-tracking);
+}
+
+.nds-avatar--neutral {
+  background: var(--nds-action-subtle-bg);
+  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  color: var(--nds-text-primary);
+}
+.nds-avatar--wine {
+  background: var(--nds-block-wine-bg);
+  color: var(--nds-block-fg);
+}
+.nds-avatar--petrol {
+  background: var(--nds-block-petrol-bg);
+  color: var(--nds-block-fg);
+}
+.nds-avatar--olive {
+  background: var(--nds-block-olive-bg);
+  color: var(--nds-block-fg);
+}
+
+.nds-avatar__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,88 @@
+.nds-switch__row {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nds-space-3);
+  cursor: pointer;
+}
+
+.nds-switch__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 22px;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.nds-switch__track {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  width: 40px;
+  height: 22px;
+  padding: var(--nds-space-1);
+  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-none);
+  background: var(--nds-surface-sunken);
+}
+.nds-switch__thumb {
+  width: 14px;
+  height: 14px;
+  /* O traço de 1 px ocupa parte do respiro de 4 px, como no Figma. */
+  margin-left: -1px;
+  background: var(--nds-text-secondary);
+  transition: transform 120ms ease-out;
+}
+
+.nds-switch__label {
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  color: var(--nds-text-primary);
+}
+
+/* Ligado */
+.nds-switch__input:checked + .nds-switch__track {
+  background: var(--nds-action-bg);
+  border-color: var(--nds-action-bg);
+}
+.nds-switch__input:checked + .nds-switch__track .nds-switch__thumb {
+  background: var(--nds-action-fg);
+  transform: translateX(18px);
+}
+
+/* Hover */
+.nds-switch__row:hover .nds-switch__input:not(:disabled) + .nds-switch__track {
+  border-color: var(--nds-border-strong);
+}
+
+/* Foco */
+.nds-switch__input:focus-visible + .nds-switch__track {
+  border-color: transparent;
+  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}
+
+/* Desabilitado */
+.nds-switch--disabled .nds-switch__row {
+  cursor: not-allowed;
+}
+.nds-switch--disabled .nds-switch__label {
+  color: var(--nds-text-disabled);
+}
+.nds-switch--disabled .nds-switch__track,
+.nds-switch--disabled .nds-switch__input:checked + .nds-switch__track,
+.nds-switch--disabled .nds-switch__row:hover .nds-switch__track {
+  border-color: var(--nds-border-subtle);
+  background: var(--nds-surface-raised);
+}
+.nds-switch--disabled .nds-switch__input:checked + .nds-switch__track {
+  background: var(--nds-action-subtle-bg);
+}
+.nds-switch--disabled .nds-switch__thumb,
+.nds-switch--disabled .nds-switch__input:checked + .nds-switch__track .nds-switch__thumb {
+  background: var(--nds-text-disabled);
+}
