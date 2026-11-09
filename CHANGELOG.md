@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.4.0] - 2026-11-09
+
+### Adicionado
+- `Button` aceita ícone antes e depois do texto: props `leadingIcon` e `trailingIcon` (um `<Icon>` ou `<Logo>`). No Figma são os booleanos **Lead** e **Trailing**, com as trocas **Ícone lead** e **Ícone trailing**, nas 32 variantes do Botão. Espaço de 8 px (`space/2`) entre ícone e texto; ícone de 20 px no médio e 16 px no pequeno, herdando a cor do texto (inclusive hover e desabilitado).
+- História `ComIcones` no Storybook, com o caso de logo de marca.
+
 ## [0.3.0] - 2026-11-09
 
 ### Adicionado

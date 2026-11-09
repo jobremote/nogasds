@@ -16,14 +16,29 @@
 
 /* Tamanhos */
 .nds-button--md {
+  --nds-button-icon-size: 20px;
   padding: var(--nds-space-3) var(--nds-space-6);
   font: var(--nds-type-label);
   letter-spacing: var(--nds-type-label-tracking);
 }
 .nds-button--sm {
+  --nds-button-icon-size: 16px;
   padding: var(--nds-space-2) var(--nds-space-4);
   font: var(--nds-type-label-small);
   letter-spacing: var(--nds-type-label-small-tracking);
+}
+
+/* Ícones lead e trailing: espaço de 8 px (space/2) entre ícone e texto; o ícone herda a cor do texto */
+.nds-button {
+  gap: var(--nds-space-2);
+}
+.nds-button__icon {
+  display: inline-flex;
+  flex: none;
+}
+.nds-button__icon > svg {
+  width: var(--nds-button-icon-size);
+  height: var(--nds-button-icon-size);
 }
 
 /* Primário */
