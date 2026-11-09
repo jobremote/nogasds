@@ -4,13 +4,13 @@ Design system **neutro e coringa** (tokens e componentes React), pensado para se
 
 O **Figma é a fonte da verdade**: os tokens e componentes daqui seguem os arquivos do NogasDS no Figma (Primitives, Foundations, Components e Icons).
 
-Versão atual: `0.2.0`. Ainda **não está publicado no npm**.
+Versão atual: `0.3.0`. Ainda **não está publicado no npm**.
 
 Catálogo online (Storybook): https://jobremote.github.io/nogasds/
 
 ## Componentes
 
-Na `0.2.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
+Na `0.3.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
 
 | Grupo | Componentes |
 | --- | --- |
@@ -22,7 +22,7 @@ Na `0.2.0` o catálogo cobre todos os componentes do Figma. Nomes e props em ing
 | Navegação | `Link`, `MenuItem`, `Tabs`, `TopBar` e `MobileTopBar`, `TabBar` |
 | Conteúdo | `Card`, `Stat`, `ProfileSummary`, `SuggestedAccount`, `Promo` |
 | Feed | `PostComposer`, `Post` e `PostAction` |
-| Base | `Icon` (subconjunto dos ícones do Figma) |
+| Base | `Icon` (subconjunto dos ícones do Figma), `Logo` (logos de marca coloridos, hoje `google`) |
 
 Todos têm os estados e variantes do Figma e foco visível; os de formulário têm rótulo associado, `aria-invalid` e descrição de ajuda ou erro. O catálogo online mostra cada estado.
 
@@ -32,7 +32,7 @@ Enquanto não há publicação no npm, instale direto do GitHub (por tag) ou por
 
 ```bash
 # Dependência do GitHub, travada em uma versão
-npm install github:jobremote/nogasds#v0.2.0
+npm install github:jobremote/nogasds#v0.3.0
 ```
 
 O pacote é construído na instalação (script `prepare`), então precisa de Node 20+ e das devDependencies do próprio pacote, que o npm instala sozinho para dependências git.

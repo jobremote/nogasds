@@ -51,7 +51,7 @@ src/
 - **Estados:** todo estado e variante do Figma tem que existir no código e na história `TodosOsEstados`. Hover e foco aparecem no Storybook pelo addon `storybook-addon-pseudo-states`.
 - **Testes:** um `.test.tsx` por componente, com comportamento (clique, teclado, controlado) e `jest-axe` sem violações.
 - **Documentação:** páginas em `src/docs/*.mdx`. Os blocos leem os valores de `tokens.css` e `typography.css`, então não repita valores de token à mão. Estilos de bloco ficam prefixados com `.sbdocs-content` para vencer o CSS padrão do Storybook. O tema da interface está em `.storybook/theme.ts`.
-- **Ícones:** vêm da biblioteca Icons do Figma, exportados como SVG para `src/components/Icon/icons.json` com `node scripts/import-icons.mjs <pasta>`. Não desenhe ícone solto.
+- **Ícones:** vêm da biblioteca Icons do Figma, exportados como SVG para `src/components/Icon/icons.json` com `node scripts/import-icons.mjs <pasta>`. Não desenhe ícone solto. Logos de marca coloridos (`logo/<nome>` no Figma) vão em `src/components/Logo/logos.json` (arquivo `logo-<nome>.svg` no mesmo script) e usam o componente `Logo`.
 
 ## Comandos
 

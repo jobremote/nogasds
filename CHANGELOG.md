@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.3.0] - 2026-11-09
+
+### Adicionado
+- Ícone `visibility-off` (olho riscado), par do `visibility`, para alternar mostrar/ocultar senha.
+- Componente `Logo` com o logo `google` (G colorido, cores fixas), vindo de `logo/google` no arquivo Icons do Figma. Logos de marca ficam separados dos ícones porque não herdam a cor do texto.
+- `scripts/import-icons.mjs` passa a importar `logo-<nome>.svg` para `src/components/Logo/logos.json`, guardando o `fill` de cada path.
+
 ## [0.2.0] - 2026-11-04
 
 ### Adicionado

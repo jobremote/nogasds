@@ -13,6 +13,7 @@ export { Icon, type IconProps } from './components/Icon/Icon';
 export { iconPaths, type IconName } from './components/Icon/paths';
 export { IconButton, type IconButtonProps } from './components/IconButton/IconButton';
 export { Link, type LinkProps, type LinkSize } from './components/Link/Link';
+export { Logo, type LogoName, type LogoProps } from './components/Logo/Logo';
 export { MenuItem, type MenuItemProps } from './components/MenuItem/MenuItem';
 export { Post, PostAction, type PostActionProps, type PostProps } from './components/Post/Post';
 export { PostComposer, type PostComposerProps } from './components/PostComposer/PostComposer';
