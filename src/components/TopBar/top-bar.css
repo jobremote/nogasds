@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   /* 40 px: no Figma o espaço entre marca, busca e ações não está na escala de 4 px (8 × 5). */
-  gap: calc(var(--nds-space-8) + var(--nds-space-2));
+  gap: calc(var(--nds-space-gap-2xl) + var(--nds-space-gap-sm));
   width: 100%;
-  height: var(--nds-layout-nav-height);
-  padding: var(--nds-space-2) 60px;
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+  height: var(--nds-size-nav-height);
+  padding: var(--nds-space-inset-sm) 60px;
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
   background: var(--nds-surface-base);
   color: var(--nds-text-primary);
 }
@@ -27,7 +27,7 @@
   flex: 0 0 320px;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--nds-space-3);
+  gap: var(--nds-space-gap-md);
 }
 
 /* Mobile: 56 px, marca e ações nas pontas. */
@@ -35,12 +35,12 @@
   justify-content: space-between;
   gap: 0;
   height: 56px;
-  padding: 0 var(--nds-space-4);
+  padding: 0 var(--nds-space-inset-lg);
 }
 .nds-top-bar--mobile .nds-top-bar__brand {
   flex: 0 1 auto;
 }
 .nds-top-bar--mobile .nds-top-bar__actions {
   flex: 0 0 auto;
-  gap: var(--nds-space-2);
+  gap: var(--nds-space-gap-sm);
 }

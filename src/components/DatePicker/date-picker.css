@@ -2,10 +2,10 @@
   box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
-  gap: var(--nds-space-3);
-  padding: var(--nds-space-4);
-  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
-  border-radius: var(--nds-radius-none);
+  gap: var(--nds-space-gap-md);
+  padding: var(--nds-space-inset-lg);
+  border: var(--nds-stroke-default) solid var(--nds-border-default);
+  border-radius: var(--nds-radius-default);
   background: var(--nds-surface-raised);
   color: var(--nds-text-primary);
 }
@@ -44,8 +44,8 @@
   height: 40px;
   margin: 0;
   padding: 0;
-  border: var(--nds-stroke-hairline) solid transparent;
-  border-radius: var(--nds-radius-none);
+  border: var(--nds-stroke-default) solid transparent;
+  border-radius: var(--nds-radius-default);
   background: transparent;
   color: var(--nds-text-primary);
   cursor: pointer;
@@ -68,8 +68,8 @@
   color: var(--nds-action-fg);
 }
 .nds-date-picker__day:focus-visible {
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
-  outline-offset: calc(var(--nds-stroke-strong) * -1);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
 }
 .nds-date-picker__day:disabled {
   cursor: not-allowed;

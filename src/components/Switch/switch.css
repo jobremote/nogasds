@@ -2,7 +2,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: var(--nds-space-3);
+  gap: var(--nds-space-gap-md);
   cursor: pointer;
 }
 
@@ -24,9 +24,9 @@
   align-items: center;
   width: 40px;
   height: 22px;
-  padding: var(--nds-space-1);
-  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
-  border-radius: var(--nds-radius-none);
+  padding: var(--nds-space-inset-xs);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
   background: var(--nds-surface-sunken);
 }
 .nds-switch__thumb {
@@ -62,7 +62,7 @@
 /* Foco */
 .nds-switch__input:focus-visible + .nds-switch__track {
   border-color: transparent;
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
   outline-offset: 0;
 }
 

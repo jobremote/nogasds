@@ -1,7 +1,7 @@
 .nds-code-field {
   display: flex;
   flex-direction: column;
-  gap: var(--nds-space-2);
+  gap: var(--nds-space-gap-sm);
   width: fit-content;
   color: var(--nds-text-primary);
 }
@@ -14,7 +14,7 @@
 
 .nds-code-field__boxes {
   display: flex;
-  gap: var(--nds-space-2);
+  gap: var(--nds-space-gap-sm);
 }
 
 .nds-code-field__box {
@@ -23,8 +23,8 @@
   height: 56px;
   margin: 0;
   padding: 0;
-  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
-  border-radius: var(--nds-radius-none);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
   outline: 0;
   background: var(--nds-surface-sunken);
   color: var(--nds-text-primary);
@@ -38,8 +38,8 @@
 }
 .nds-code-field__box:focus {
   border-color: var(--nds-focus-ring);
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
-  outline-offset: calc(var(--nds-stroke-strong) * -1);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
 }
 
 .nds-code-field__message {

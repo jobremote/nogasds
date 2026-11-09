@@ -3,7 +3,7 @@
   align-items: flex-start;
   height: auto;
   min-height: 120px;
-  padding: var(--nds-space-3);
+  padding: var(--nds-space-inset-md);
 }
 .nds-text-area__input {
   align-self: stretch;

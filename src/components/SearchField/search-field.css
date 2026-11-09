@@ -2,12 +2,12 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: var(--nds-space-2);
+  gap: var(--nds-space-gap-sm);
   width: 100%;
   height: 40px;
-  padding: var(--nds-space-2) var(--nds-space-3);
-  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
-  border-radius: var(--nds-radius-none);
+  padding: var(--nds-space-inset-sm) var(--nds-space-inset-md);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
   background: var(--nds-surface-sunken);
 }
 .nds-search-field:hover {
@@ -15,7 +15,7 @@
 }
 .nds-search-field:focus-within {
   border-color: transparent;
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
   outline-offset: 0;
 }
 .nds-search-field__icon {

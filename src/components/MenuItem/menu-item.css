@@ -2,12 +2,12 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: var(--nds-space-3);
+  gap: var(--nds-space-gap-md);
   width: 100%;
   margin: 0;
-  padding: var(--nds-space-3);
+  padding: var(--nds-space-inset-md);
   border: 0;
-  border-radius: var(--nds-radius-none);
+  border-radius: var(--nds-radius-default);
   background: transparent;
   color: var(--nds-text-secondary);
   cursor: pointer;
@@ -24,9 +24,9 @@
 .nds-menu-item--active {
   background: var(--nds-action-subtle-bg);
   color: var(--nds-text-primary);
-  box-shadow: inset var(--nds-stroke-strong) 0 0 var(--nds-action-bg);
+  box-shadow: inset var(--nds-stroke-emphasis) 0 0 var(--nds-action-bg);
 }
 .nds-menu-item:focus-visible {
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
-  outline-offset: calc(var(--nds-stroke-strong) * -1);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
 }

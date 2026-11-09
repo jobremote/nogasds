@@ -151,7 +151,7 @@ export function SpaceScale() {
           <div className="nds-doc-types__meta">
             <code>{token.css}</code>
             <small>
-              {token.figma} · {token.value}
+              {token.figma} · {token.value} (de {token.alias.replace('--nds-', '')})
             </small>
           </div>
           <span className="nds-doc-space__bar" style={{ width: token.px }} />
@@ -171,7 +171,7 @@ export function ShapeDemo() {
           <span className="nds-doc-shape" style={{ borderRadius: `var(${token.css})` }} />
           <figcaption>
             <code>{token.css}</code>
-            <small>{token.value === '0' ? '0 · padrão do sistema' : `${token.value} · só avatar e switch`}</small>
+            <small>{token.value === '0' ? '0 · padrão do sistema' : `${token.value} · só formas circulares`}</small>
           </figcaption>
         </figure>
       ))}
@@ -180,7 +180,10 @@ export function ShapeDemo() {
           <span className="nds-doc-shape" style={{ borderWidth: `var(${token.css})` }} />
           <figcaption>
             <code>{token.css}</code>
-            <small>{token.value}</small>
+            <small>
+              {token.value} ·{' '}
+              {token.figma === 'stroke/focus' ? 'anel de foco' : token.figma === 'stroke/emphasis' ? 'erro e status' : 'bordas e divisórias'}
+            </small>
           </figcaption>
         </figure>
       ))}

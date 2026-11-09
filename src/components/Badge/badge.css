@@ -2,9 +2,9 @@
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  padding: var(--nds-space-1) var(--nds-space-2);
-  border: var(--nds-stroke-hairline) solid transparent;
-  border-radius: var(--nds-radius-none);
+  padding: var(--nds-space-inset-xs) var(--nds-space-inset-sm);
+  border: var(--nds-stroke-default) solid transparent;
+  border-radius: var(--nds-radius-default);
   font: var(--nds-type-label-small);
   letter-spacing: var(--nds-type-label-small-tracking);
   white-space: nowrap;

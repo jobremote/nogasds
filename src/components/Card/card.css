@@ -2,8 +2,8 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
-  border-radius: var(--nds-radius-none);
+  border: var(--nds-stroke-default) solid var(--nds-border-subtle);
+  border-radius: var(--nds-radius-default);
   background: var(--nds-surface-raised);
   color: var(--nds-text-primary);
 }
@@ -30,8 +30,8 @@
 .nds-card__content {
   display: flex;
   flex-direction: column;
-  gap: var(--nds-space-2);
-  padding: var(--nds-space-6);
+  gap: var(--nds-space-gap-sm);
+  padding: var(--nds-space-inset-xl);
 }
 .nds-card__eyebrow,
 .nds-card__title,

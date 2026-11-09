@@ -12,7 +12,7 @@
   color: var(--nds-text-primary);
 }
 .nds-select__arrow {
-  margin-right: calc(var(--nds-space-1) * -1);
+  margin-right: calc(var(--nds-space-gap-xs) * -1);
   color: var(--nds-text-secondary);
   pointer-events: none;
 }

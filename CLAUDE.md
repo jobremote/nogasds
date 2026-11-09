@@ -21,19 +21,19 @@ Pasta "NogasDS" no Figma:
 | Arquivo | Chave | Conteúdo |
 | --- | --- | --- |
 | Primitives | `TOvBQ2LciGTyOBWhOcDIxf` | cores (46) e Dimensions |
-| Foundations | `hp0rXAR5c4j4jjhLXc5230` | coleção Semantic (modos Escuro e Claro) e 13 text styles |
+| Foundations | `hp0rXAR5c4j4jjhLXc5230` | coleção Semantic (cores, modos Escuro e Claro), coleção Layout (espaço, raio, traço e tamanho, por alias do Dimensions) e 13 text styles |
 | Components | `S62S90kVvOdQo25zBvG2Gr` | componentes por página |
 | Icons | `hkfQRR9V1xoU2db1uVV9C8` | ícones Material Symbols `icon/<nome>` |
 
 Antes de criar ou alterar token ou componente, leia o Figma (Figma MCP: `get_design_context`, `get_variable_defs`, `get_screenshot`) e compare por captura com o Storybook. Se o Figma tiver uma lacuna ou inconsistência, **não improvise em silêncio**: implemente o mais coerente, documente em "Lacunas" abaixo e avise o Leo.
 
-Regra de camadas: componentes só usam tokens **Semantic** e **Dimensions**, nunca primitivos nem valores soltos.
+Regra de camadas: Primitives -> Foundations -> componentes. Componentes e telas só usam tokens **Semantic** (cor) e **Layout** (espaço, raio, traço e tamanho), ambos do Foundations. **Nunca** os primitivos (Primitives e Dimensions) nem valores soltos; só o Foundations aponta para eles. Um teste (`src/styles/tokens.test.ts`) barra primitivos de Dimensions no código.
 
 ## Estrutura
 
 ```
 src/
-  styles/tokens.css       Semantic (escuro/claro) e Dimensions
+  styles/tokens.css       Semantic (escuro/claro), Dimensions (primitivos, uso proibido nos componentes) e Layout (semântico; precisa ser o último bloco :root)
   styles/typography.css   13 text styles de Inter
   components/<Nome>/      <Nome>.tsx, <nome>.css, <Nome>.stories.tsx, <Nome>.test.tsx
   components/Icon/icons.json   `d` dos SVGs exportados do Figma (import: scripts/import-icons.mjs)
@@ -44,7 +44,7 @@ src/
 
 ## Convenções
 
-- **Tokens:** variável CSS `--nds-<nome-do-figma-com-hifen>` (`surface/base` → `--nds-surface-base`). Tema claro via `[data-theme='light']`.
+- **Tokens:** variável CSS `--nds-<nome-do-figma-com-hifen>` (`surface/base` → `--nds-surface-base`; `space/gap/sm` → `--nds-space-gap-sm`). Espaço: `space/inset/*` para padding e `space/gap/*` para gap e margens entre elementos. Traço: `stroke/default` (bordas), `stroke/focus` (anel de foco), `stroke/emphasis` (erro e status). Tema claro via `[data-theme='light']`.
 - **Estilos:** CSS puro por componente, classes `nds-<componente>`, modificadores `nds-<componente>--<variante>`, elementos `nds-<componente>__<parte>`. Sem Tailwind, CSS-in-JS ou qualquer lib de estilos que obrigue o produto a usar o mesmo. Text styles: `font: var(--nds-type-x); letter-spacing: var(--nds-type-x-tracking);`.
 - **Nomes de props:** variantes em inglês (`primary`, `outline`, `md`, `sm`, `error`), mapeadas aos nomes em português do Figma no comentário da prop.
 - **Acessibilidade (obrigatória):** rótulo associado (`label`/`htmlFor` ou `aria-labelledby`), foco visível (`:focus-visible`, anel de 2 px), estados `disabled` nativos, erro com `aria-invalid` e mensagem ligada por `aria-describedby`. `forwardRef` nos componentes que envolvem elemento nativo.

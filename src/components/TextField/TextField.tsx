@@ -9,8 +9,12 @@ export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElemen
   helpText?: ReactNode;
   /** Mensagem de erro. Quando presente, o campo fica inválido (`aria-invalid`) e a mensagem substitui o texto de ajuda. */
   error?: ReactNode;
-  /** Conteúdo no fim do campo (por exemplo, um botão de mostrar/ocultar). */
-  endSlot?: ReactNode;
+  /**
+   * Figma: Trailing (booleano) + Ícone trailing. Ícone no fim do campo, de 20 px, na cor secundária:
+   * um `<Icon>` decorativo ou um controle com ícone (por exemplo, o botão de mostrar/ocultar senha,
+   * que precisa de nome acessível: use `<IconButton size="sm" ... />`).
+   */
+  trailingIcon?: ReactNode;
   /** Classe do contêiner externo (o `className` vai para o `<input>`). */
   containerClassName?: string;
 }
@@ -20,7 +24,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function T
     label,
     helpText,
     error,
-    endSlot,
+    trailingIcon,
     containerClassName,
     className,
     id: idProp,
@@ -59,7 +63,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function T
           aria-describedby={describedBy}
           className={cx('nds-text-field__input', className)}
         />
-        {endSlot}
+        {trailingIcon ? <span className="nds-text-field__trailing">{trailingIcon}</span> : null}
       </div>
       {message ? (
         <p id={messageId} className="nds-text-field__message">

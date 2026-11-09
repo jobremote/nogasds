@@ -7,7 +7,7 @@ import { TextField, type TextFieldProps } from '../TextField/TextField';
 import './date-field.css';
 
 export interface DateFieldProps
-  extends Omit<TextFieldProps, 'value' | 'defaultValue' | 'onChange' | 'endSlot' | 'type' | 'label'> {
+  extends Omit<TextFieldProps, 'value' | 'defaultValue' | 'onChange' | 'trailingIcon' | 'type' | 'label'> {
   label: ReactNode;
   /** Data (controlado). */
   value?: Date | null;
@@ -96,7 +96,7 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(function D
           if (parsed) commit(parsed);
           else if (next === '' && date) commit(null);
         }}
-        endSlot={
+        trailingIcon={
           <button
             ref={toggle}
             type="button"
