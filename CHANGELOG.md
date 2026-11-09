@@ -2,6 +2,23 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.5.0] - 2026-11-09
+
+### Adicionado
+- Tokens semânticos de **Layout** (coleção Layout do Foundations no Figma): `--nds-space-gap-*` e `--nds-space-inset-*` (xs a 5xl, 4 a 96 px), `--nds-radius-default` e `--nds-radius-round`, `--nds-stroke-default`, `--nds-stroke-focus` e `--nds-stroke-emphasis`, `--nds-size-nav-height`. Todos apontam para os primitivos de Dimensions.
+- Teste de camadas (`src/styles/tokens.test.ts`): barra primitivos de Dimensions em componentes, histórias e docs.
+- `TextField` com ícone no fim do campo: prop `trailingIcon`. No Figma, o Campo de texto ganhou o booleano **Trailing** e a troca **Ícone trailing** (padrão `icon/visibility`, 20 px, cor secundária; desabilitado na cor de desabilitado) nas 10 variantes. Para mostrar/ocultar senha, passe um `<IconButton size="sm" />` com nome acessível e `aria-pressed`. Histórias `ComIconeTrailing` e `Senha`.
+
+### Alterado
+- Todos os componentes, histórias e docs passam a usar os tokens semânticos de Layout. Nenhuma mudança visual: os valores são os mesmos.
+- A página "Espaço e forma" do Storybook mostra os tokens semânticos e o primitivo de origem de cada um.
+- Regra de camadas: Primitives, depois Foundations, depois componentes. Os primitivos de Dimensions ficam só em `tokens.css`, como origem dos tokens de Layout.
+
+- **Quebra:** `TextField` troca a prop `endSlot` por `trailingIcon`, alinhada ao Figma (o `endSlot` nasceu só no código). `DateField` já usa a nova prop. Nenhum produto consome o pacote ainda.
+
+### Removido da API de uso
+- Quem consome o pacote não deve mais usar `--nds-space-N`, `--nds-radius-none|full`, `--nds-stroke-hairline|strong` nem `--nds-layout-nav-height`. Os nomes continuam existindo em `tokens.css`, mas são primitivos: use os de Layout.
+
 ## [0.4.0] - 2026-11-09
 
 ### Adicionado

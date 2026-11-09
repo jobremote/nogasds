@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: var(--nds-radius-full);
+  border-radius: var(--nds-radius-round);
   user-select: none;
 }
 
@@ -30,7 +30,7 @@
 
 .nds-avatar--neutral {
   background: var(--nds-action-subtle-bg);
-  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border: var(--nds-stroke-default) solid var(--nds-border-default);
   color: var(--nds-text-primary);
 }
 .nds-avatar--wine {

@@ -2,7 +2,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: var(--nds-space-2);
+  gap: var(--nds-space-gap-sm);
   cursor: pointer;
 }
 
@@ -25,15 +25,15 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
-  border-radius: var(--nds-radius-full);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-round);
   background: var(--nds-surface-sunken);
 }
 .nds-radio__circle::after {
   content: '';
   width: 10px;
   height: 10px;
-  border-radius: var(--nds-radius-full);
+  border-radius: var(--nds-radius-round);
   background: var(--nds-text-primary);
   visibility: hidden;
 }
@@ -57,8 +57,8 @@
 
 .nds-radio__input:focus-visible + .nds-radio__circle {
   border-color: var(--nds-focus-ring);
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
-  outline-offset: calc(var(--nds-stroke-strong) * -1);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
 }
 
 .nds-radio--disabled .nds-radio__row {

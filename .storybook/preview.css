@@ -12,14 +12,14 @@ body {
 .sb-canvas {
   min-height: 100vh;
   box-sizing: border-box;
-  padding: var(--nds-space-6);
+  padding: var(--nds-space-inset-xl);
   background: var(--nds-surface-base);
 }
 .sb-section {
-  margin: 0 0 var(--nds-space-8);
+  margin: 0 0 var(--nds-space-gap-2xl);
 }
 .sb-section > h3 {
-  margin: 0 0 var(--nds-space-4);
+  margin: 0 0 var(--nds-space-gap-lg);
   font: var(--nds-type-overline);
   letter-spacing: var(--nds-type-overline-tracking);
   text-transform: uppercase;
@@ -29,12 +29,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: var(--nds-space-6);
+  gap: var(--nds-space-gap-xl);
 }
 .sb-cell {
   display: flex;
   flex-direction: column;
-  gap: var(--nds-space-2);
+  gap: var(--nds-space-gap-sm);
   align-items: flex-start;
 }
 .sb-cell > small {

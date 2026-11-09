@@ -1,12 +1,12 @@
 /* Estilos só da documentação (Storybook); não entram no pacote. */
 
 .sbdocs-content .nds-doc-hero {
-  padding: var(--nds-space-12) 0 var(--nds-space-8);
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  padding: var(--nds-space-inset-3xl) 0 var(--nds-space-inset-2xl);
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 .sbdocs-content .nds-doc-eyebrow,
 .sbdocs-content .nds-doc-overline {
-  margin: 0 0 var(--nds-space-4);
+  margin: 0 0 var(--nds-space-gap-lg);
   font: var(--nds-type-overline);
   letter-spacing: var(--nds-type-overline-tracking);
   text-transform: uppercase;
@@ -14,7 +14,7 @@
 }
 .sbdocs-content .nds-doc-wordmark {
   display: block;
-  margin-bottom: var(--nds-space-6);
+  margin-bottom: var(--nds-space-gap-xl);
   font-family: var(--nds-font-family);
   line-height: 1;
   letter-spacing: -0.06em;
@@ -31,12 +31,12 @@
 .sbdocs-content .nds-doc-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  margin: var(--nds-space-8) 0;
-  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  margin: var(--nds-space-gap-2xl) 0;
+  border: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 .sbdocs-content .nds-doc-stats > div {
-  padding: var(--nds-space-6);
-  border-right: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  padding: var(--nds-space-inset-xl);
+  border-right: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 .sbdocs-content .nds-doc-stats > div:last-child {
   border-right: 0;
@@ -47,7 +47,7 @@
   color: var(--nds-text-primary);
 }
 .sbdocs-content .nds-doc-stats dd {
-  margin: var(--nds-space-2) 0 0;
+  margin: var(--nds-space-gap-sm) 0 0;
   font: var(--nds-type-small);
   color: var(--nds-text-muted);
 }
@@ -56,22 +56,22 @@
 .sbdocs-content .nds-doc-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  margin: var(--nds-space-6) 0;
+  margin: var(--nds-space-gap-xl) 0;
   padding: 0;
   list-style: none;
-  border-top: var(--nds-stroke-hairline) solid var(--nds-border-default);
-  border-left: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border-top: var(--nds-stroke-default) solid var(--nds-border-default);
+  border-left: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 .sbdocs-content .nds-doc-principles li,
 .sbdocs-content .nds-doc-cards li {
   margin: 0;
-  padding: var(--nds-space-6);
-  border-right: var(--nds-stroke-hairline) solid var(--nds-border-default);
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  padding: var(--nds-space-inset-xl);
+  border-right: var(--nds-stroke-default) solid var(--nds-border-default);
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 .sbdocs-content .nds-doc-principles h3,
 .sbdocs-content .nds-doc-cards h3 {
-  margin: 0 0 var(--nds-space-2);
+  margin: 0 0 var(--nds-space-gap-sm);
   font: var(--nds-type-title);
   letter-spacing: var(--nds-type-title-tracking);
   text-transform: uppercase;
@@ -86,7 +86,7 @@
 }
 .sbdocs-content .nds-doc-index {
   display: block;
-  margin-bottom: var(--nds-space-8);
+  margin-bottom: var(--nds-space-gap-2xl);
   font: var(--nds-type-overline);
   letter-spacing: var(--nds-type-overline-tracking);
   color: var(--nds-text-muted);
@@ -95,9 +95,9 @@
   display: flex;
   min-height: 140px;
   flex-direction: column;
-  gap: var(--nds-space-2);
-  margin: calc(var(--nds-space-6) * -1);
-  padding: var(--nds-space-6);
+  gap: var(--nds-space-gap-sm);
+  margin: calc(var(--nds-space-gap-xl) * -1);
+  padding: var(--nds-space-inset-xl);
   color: inherit;
   text-decoration: none;
 }
@@ -105,8 +105,8 @@
   background: var(--nds-surface-raised);
 }
 .sbdocs-content .nds-doc-cards a:focus-visible {
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
-  outline-offset: calc(var(--nds-stroke-strong) * -1);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
 }
 .sbdocs-content .nds-doc-cards a span {
   margin-top: auto;
@@ -115,29 +115,29 @@
 }
 
 .sbdocs-content .nds-doc-showcase {
-  margin: var(--nds-space-6) 0;
-  padding: var(--nds-space-8);
+  margin: var(--nds-space-gap-xl) 0;
+  padding: var(--nds-space-inset-2xl);
   background: var(--nds-surface-sunken);
-  border: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 .sbdocs-content .nds-doc-showcase__row {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--nds-space-4);
+  gap: var(--nds-space-gap-lg);
 }
 
 .sbdocs-content .nds-doc-colors section,
 .sbdocs-content .nds-doc-types section {
-  margin-bottom: var(--nds-space-8);
+  margin-bottom: var(--nds-space-gap-2xl);
 }
 .sbdocs-content .nds-doc-colors__head,
 .sbdocs-content .nds-doc-colors__row {
   display: grid;
   grid-template-columns: minmax(180px, 1.4fr) 1fr 1fr;
-  gap: var(--nds-space-4);
+  gap: var(--nds-space-gap-lg);
   align-items: center;
-  padding: var(--nds-space-2) 0;
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+  padding: var(--nds-space-inset-sm) 0;
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
 }
 .sbdocs-content .nds-doc-colors__head {
   font: var(--nds-type-overline);
@@ -160,7 +160,7 @@
 .sbdocs-content .nds-doc-chip {
   display: flex;
   align-items: center;
-  gap: var(--nds-space-3);
+  gap: var(--nds-space-gap-md);
   font: var(--nds-type-small);
   font-variant-numeric: tabular-nums;
   color: var(--nds-text-secondary);
@@ -169,16 +169,16 @@
   width: 40px;
   height: 40px;
   flex: none;
-  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
 }
 
 .sbdocs-content .nds-doc-types__row {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) 3fr;
-  gap: var(--nds-space-6);
+  gap: var(--nds-space-gap-xl);
   align-items: baseline;
-  padding: var(--nds-space-4) 0;
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+  padding: var(--nds-space-inset-lg) 0;
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
 }
 .sbdocs-content .nds-doc-types__row p {
   margin: 0;
@@ -188,21 +188,21 @@
 .sbdocs-content .nds-doc-space__row {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) 3fr;
-  gap: var(--nds-space-6);
+  gap: var(--nds-space-gap-xl);
   align-items: center;
-  padding: var(--nds-space-2) 0;
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+  padding: var(--nds-space-inset-sm) 0;
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
 }
 .sbdocs-content .nds-doc-space__bar {
-  height: var(--nds-space-4);
+  height: var(--nds-space-gap-lg);
   background: var(--nds-text-primary);
 }
 
 .sbdocs-content .nds-doc-shapes {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--nds-space-8);
-  margin: var(--nds-space-6) 0;
+  gap: var(--nds-space-gap-2xl);
+  margin: var(--nds-space-gap-xl) 0;
 }
 .sbdocs-content .nds-doc-shapes figure {
   margin: 0;
@@ -212,11 +212,11 @@
   width: 96px;
   height: 96px;
   box-sizing: border-box;
-  border: var(--nds-stroke-hairline) solid var(--nds-border-strong);
+  border: var(--nds-stroke-default) solid var(--nds-border-strong);
   background: var(--nds-surface-sunken);
 }
 .sbdocs-content .nds-doc-shapes figcaption {
-  margin-top: var(--nds-space-3);
+  margin-top: var(--nds-space-gap-md);
 }
 .sbdocs-content .nds-doc-shapes code {
   display: block;
@@ -243,7 +243,7 @@
   padding: 0;
 }
 .sbdocs-content .nds-doc-stats dd {
-  margin: var(--nds-space-2) 0 0;
+  margin: var(--nds-space-gap-sm) 0 0;
 }
 .sbdocs-content .nds-doc-principles li,
 .sbdocs-content .nds-doc-cards li {
@@ -273,11 +273,11 @@
   border-bottom: 0;
 }
 .sbdocs-content h2 {
-  margin-top: var(--nds-space-12);
+  margin-top: var(--nds-space-gap-3xl);
   font: var(--nds-type-title);
   letter-spacing: var(--nds-type-title-tracking);
   text-transform: uppercase;
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-default);
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-default);
 }
 
 /* Os text styles vencem os estilos de parágrafo do Storybook. */

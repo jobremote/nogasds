@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '../../test/axe';
+import { Icon } from '../Icon/Icon';
+import { IconButton } from '../IconButton/IconButton';
 import { TextField } from './TextField';
 
 describe('TextField', () => {
@@ -51,12 +54,60 @@ describe('TextField', () => {
     expect(screen.getByLabelText('Nome')).toHaveValue('');
   });
 
+  it('mostra o ícone trailing depois do campo, decorativo por padrão', () => {
+    const { container } = render(<TextField label="Busca" trailingIcon={<Icon name="search" />} />);
+    const control = container.querySelector('.nds-text-field__control')!;
+    expect(control.lastElementChild).toHaveClass('nds-text-field__trailing');
+    expect(control.querySelector('.nds-text-field__trailing svg')).toHaveAttribute('aria-hidden', 'true');
+    expect(screen.getByLabelText('Busca')).toBeInTheDocument();
+  });
+
+  it('não cria o espaço do ícone sem trailingIcon', () => {
+    const { container } = render(<TextField label="Nome" />);
+    expect(container.querySelector('.nds-text-field__trailing')).toBeNull();
+  });
+
+  it('aceita um botão de mostrar/ocultar senha como trailing', async () => {
+    const user = userEvent.setup();
+    function Password() {
+      const [visible, setVisible] = useState(false);
+      return (
+        <TextField
+          label="Senha"
+          type={visible ? 'text' : 'password'}
+          defaultValue="segredo"
+          trailingIcon={
+            <IconButton
+              size="sm"
+              icon={visible ? 'visibility-off' : 'visibility'}
+              label={visible ? 'Ocultar senha' : 'Mostrar senha'}
+              aria-pressed={visible}
+              onClick={() => setVisible((v) => !v)}
+            />
+          }
+        />
+      );
+    }
+    render(<Password />);
+    const input = screen.getByLabelText('Senha');
+    expect(input).toHaveAttribute('type', 'password');
+    await user.click(screen.getByRole('button', { name: 'Mostrar senha' }));
+    expect(input).toHaveAttribute('type', 'text');
+    expect(screen.getByRole('button', { name: 'Ocultar senha' })).toHaveAttribute('aria-pressed', 'true');
+  });
+
   it('não tem violações de acessibilidade', async () => {
     const { container } = render(
       <>
         <TextField label="Padrão" helpText="Ajuda" />
         <TextField label="Erro" error="Obrigatório" />
         <TextField label="Desabilitado" disabled />
+        <TextField label="Com ícone" trailingIcon={<Icon name="search" />} />
+        <TextField
+          label="Senha"
+          type="password"
+          trailingIcon={<IconButton size="sm" icon="visibility" label="Mostrar senha" />}
+        />
       </>,
     );
     expect(await axe(container)).toHaveNoViolations();

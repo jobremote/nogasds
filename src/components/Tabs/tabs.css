@@ -1,15 +1,15 @@
 .nds-tabs {
   display: flex;
-  border-bottom: var(--nds-stroke-hairline) solid var(--nds-border-subtle);
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
 }
 
 .nds-tabs__tab {
   box-sizing: border-box;
-  margin: 0 0 calc(var(--nds-stroke-hairline) * -1);
-  padding: var(--nds-space-3) var(--nds-space-4);
+  margin: 0 0 calc(var(--nds-stroke-default) * -1);
+  padding: var(--nds-space-inset-md) var(--nds-space-inset-lg);
   border: 0;
-  border-bottom: var(--nds-stroke-strong) solid transparent;
-  border-radius: var(--nds-radius-none);
+  border-bottom: var(--nds-stroke-emphasis) solid transparent;
+  border-radius: var(--nds-radius-default);
   background: transparent;
   color: var(--nds-text-secondary);
   cursor: pointer;
@@ -24,8 +24,8 @@
   border-bottom-color: var(--nds-action-bg);
 }
 .nds-tabs__tab:focus-visible {
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
-  outline-offset: calc(var(--nds-stroke-strong) * -1);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
 }
 .nds-tabs__tab:disabled {
   cursor: not-allowed;

@@ -2,11 +2,11 @@
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  gap: var(--nds-space-3);
+  gap: var(--nds-space-gap-md);
   width: 100%;
-  padding: var(--nds-space-4);
-  border: var(--nds-stroke-hairline) solid;
-  border-radius: var(--nds-radius-none);
+  padding: var(--nds-space-inset-lg);
+  border: var(--nds-stroke-default) solid;
+  border-radius: var(--nds-radius-default);
 }
 
 .nds-banner__icon {
@@ -18,7 +18,7 @@
   flex: 1 1 auto;
   min-width: 0;
   flex-direction: column;
-  gap: var(--nds-space-1);
+  gap: var(--nds-space-gap-xs);
 }
 
 .nds-banner__title,

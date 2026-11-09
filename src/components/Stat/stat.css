@@ -1,7 +1,7 @@
 .nds-stat {
   display: flex;
   flex-direction: column-reverse;
-  gap: var(--nds-space-1);
+  gap: var(--nds-space-gap-xs);
   margin: 0;
 }
 .nds-stat__value {

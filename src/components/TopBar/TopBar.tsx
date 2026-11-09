@@ -11,7 +11,7 @@ export interface TopBarProps extends Omit<HTMLAttributes<HTMLElement>, 'children
   actions?: ReactNode;
 }
 
-/** Barra superior de desktop (64 px de altura, `--nds-layout-nav-height`). */
+/** Barra superior de desktop (64 px de altura, `--nds-size-nav-height`). */
 export const TopBar = forwardRef<HTMLElement, TopBarProps>(function TopBar(
   { brand, search, actions, className, ...rest },
   ref,

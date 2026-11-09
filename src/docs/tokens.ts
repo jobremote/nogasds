@@ -64,19 +64,35 @@ export function colorTokenCount(): number {
 
 export interface DimensionToken {
   css: string;
+  /** Nome no Figma (coleção Layout do Foundations), por exemplo `space/gap/sm`. */
   figma: string;
+  /** Valor já resolvido, por exemplo `8px`. */
   value: string;
   px: number;
+  /** Primitivo de Dimensions para o qual o token aponta, por exemplo `--nds-space-2`. */
+  alias: string;
 }
 
-export function dimensionTokens(prefix: 'space' | 'radius' | 'stroke' | 'layout'): DimensionToken[] {
+/**
+ * Tokens semânticos de Layout (último bloco :root de tokens.css). Os valores são `var()` de primitivos
+ * de Dimensions (blocos anteriores), que são resolvidos aqui.
+ */
+export function dimensionTokens(prefix: 'space' | 'radius' | 'stroke' | 'size'): DimensionToken[] {
   const rootBlocks = [...tokensCss.matchAll(/:root\s*\{([\s\S]*?)\n\}/g)].map((m) => m[1]);
-  const dims = rootBlocks[rootBlocks.length - 1] ?? '';
+  const primitives = new Map<string, string>();
+  for (const block of rootBlocks.slice(0, -1)) {
+    for (const m of block.matchAll(/(--nds-[\w-]+):\s*([^;]+);/g)) primitives.set(m[1], m[2].trim());
+  }
+  const layout = rootBlocks[rootBlocks.length - 1] ?? '';
   const out: DimensionToken[] = [];
-  for (const match of dims.matchAll(/(--nds-([\w]+)-([\w-]+)):\s*([^;]+);/g)) {
+  for (const match of layout.matchAll(/(--nds-([\w]+)-([\w-]+)):\s*([^;]+);/g)) {
     if (match[2] !== prefix) continue;
-    const value = match[4].trim();
-    out.push({ css: match[1], figma: `${match[2]}/${match[3]}`, value, px: parseFloat(value) || 0 });
+    const raw = match[4].trim();
+    const alias = raw.match(/^var\((--nds-[\w-]+)\)$/)?.[1] ?? '';
+    const value = alias ? (primitives.get(alias) ?? raw) : raw;
+    // `space-gap-sm` no CSS é `space/gap/sm` no Figma; os demais são `grupo/nome`.
+    const name = prefix === 'space' ? match[3].replace('-', '/') : match[3];
+    out.push({ css: match[1], figma: `${match[2]}/${name}`, value, px: parseFloat(value) || 0, alias });
   }
   return out;
 }

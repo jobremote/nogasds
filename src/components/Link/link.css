@@ -1,7 +1,7 @@
 .nds-link {
   display: inline-block;
-  padding: var(--nds-space-1);
-  border-radius: var(--nds-radius-none);
+  padding: var(--nds-space-inset-xs);
+  border-radius: var(--nds-radius-default);
   color: var(--nds-link);
   text-decoration: underline;
   cursor: pointer;
@@ -18,7 +18,7 @@
   color: var(--nds-link-hover);
 }
 .nds-link:focus-visible {
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
   outline-offset: 0;
 }
 

@@ -2,10 +2,10 @@
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  gap: var(--nds-space-2);
-  padding: var(--nds-space-1) var(--nds-space-3);
-  border: var(--nds-stroke-hairline) solid var(--nds-border-control);
-  border-radius: var(--nds-radius-none);
+  gap: var(--nds-space-gap-sm);
+  padding: var(--nds-space-inset-xs) var(--nds-space-inset-md);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
   background: var(--nds-surface-sunken);
   color: var(--nds-text-primary);
 }
@@ -14,7 +14,7 @@
   background: var(--nds-surface-raised);
 }
 .nds-tag:focus-within {
-  outline: var(--nds-stroke-strong) solid var(--nds-focus-ring);
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
   outline-offset: 0;
 }
 

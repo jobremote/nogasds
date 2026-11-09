@@ -111,7 +111,11 @@
   --nds-status-success-border: #838255;
 }
 
-/* Dimensions (independem de tema). Base de 4 px. */
+/*
+ * Dimensions: primitivos (independem de tema). Base de 4 px.
+ * NÃO use estes valores em componentes, telas ou docs: use os tokens semânticos de Layout logo abaixo.
+ * Só os tokens de Layout apontam para os primitivos (mesma regra do Figma: Primitives -> Foundations -> componentes).
+ */
 :root {
   --nds-space-1: 4px;
   --nds-space-2: 8px;
@@ -130,4 +134,44 @@
   --nds-stroke-strong: 2px;
 
   --nds-layout-nav-height: 64px;
+}
+
+/*
+ * Layout: tokens semânticos de espaçamento, raio, traço e tamanho (coleção Layout do Foundations no Figma).
+ * Este precisa ser o ÚLTIMO bloco :root do arquivo: a documentação do Storybook lê só ele.
+ */
+:root {
+  /* Espaço entre itens irmãos (gap e margens entre elementos) */
+  --nds-space-gap-xs: var(--nds-space-1);
+  --nds-space-gap-sm: var(--nds-space-2);
+  --nds-space-gap-md: var(--nds-space-3);
+  --nds-space-gap-lg: var(--nds-space-4);
+  --nds-space-gap-xl: var(--nds-space-6);
+  --nds-space-gap-2xl: var(--nds-space-8);
+  --nds-space-gap-3xl: var(--nds-space-12);
+  --nds-space-gap-4xl: var(--nds-space-16);
+  --nds-space-gap-5xl: var(--nds-space-24);
+
+  /* Espaço interno de contêineres (padding) */
+  --nds-space-inset-xs: var(--nds-space-1);
+  --nds-space-inset-sm: var(--nds-space-2);
+  --nds-space-inset-md: var(--nds-space-3);
+  --nds-space-inset-lg: var(--nds-space-4);
+  --nds-space-inset-xl: var(--nds-space-6);
+  --nds-space-inset-2xl: var(--nds-space-8);
+  --nds-space-inset-3xl: var(--nds-space-12);
+  --nds-space-inset-4xl: var(--nds-space-16);
+  --nds-space-inset-5xl: var(--nds-space-24);
+
+  /* Raio: quadrado por padrão; total só para formas circulares */
+  --nds-radius-default: var(--nds-radius-none);
+  --nds-radius-round: var(--nds-radius-full);
+
+  /* Traço: padrão (bordas e divisórias), foco (anel de foco) e ênfase (erro e status) */
+  --nds-stroke-default: var(--nds-stroke-hairline);
+  --nds-stroke-focus: var(--nds-stroke-strong);
+  --nds-stroke-emphasis: var(--nds-stroke-strong);
+
+  /* Tamanho */
+  --nds-size-nav-height: var(--nds-layout-nav-height);
 }
