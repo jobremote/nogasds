@@ -2,6 +2,17 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.6.0] - 2026-11-10
+
+### Adicionado
+- `Cover` (Figma: **Capa**): faixa de capa de página ou perfil. Cor sólida por padrão, `src` para a imagem e `placeholder` para o espaço da imagem. 200 px de altura no desktop e 120 px em telas estreitas (até 640 px).
+- `ItemCard` (Figma: **Card de jogo**): item compacto com miniatura, título, apoio e nota opcional (1 a 5).
+- `BoardColumn` (Figma: **Coluna do Game Shelf**): coluna de quadro kanban, com título, contagem total, itens em lista e mensagem de coluna vazia.
+- `Modal` (Figma: **Modal cabeçalho** e **Modal rodapé**): diálogo sobre o conteúdo com o `<dialog>` nativo (foco preso, Esc e clique no fundo chamam `onClose`). Em telas estreitas ocupa a tela inteira.
+- `TopBar`: variáveis opcionais `--nds-top-bar-content-width` e `--nds-top-bar-gutter` para alinhar a marca e as ações às bordas da coluna de conteúdo da página (a barra continua em largura total, com a borda inferior de ponta a ponta). Sem elas, as laterais seguem em 60 px, como antes.
+- Ícone `edit` (lápis).
+- `Stat` ganha a prop `emphasis` (Figma: **Destaque**): `primary` (padrão, igual ao de antes) e `secondary`, com número menor (`lead`), leve e em cor secundária, para contadores de apoio. No Figma, o Stat virou um conjunto de variantes.
+
 ## [0.5.0] - 2026-11-09
 
 ### Adicionado

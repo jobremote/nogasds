@@ -10,6 +10,12 @@
   letter-spacing: var(--nds-type-headline-tracking);
   color: var(--nds-text-primary);
 }
+/* Destaque secundário (Figma: Destaque = Secundário): número leve, em cor secundária. */
+.nds-stat--secondary .nds-stat__value {
+  font: var(--nds-type-lead);
+  letter-spacing: var(--nds-type-lead-tracking);
+  color: var(--nds-text-secondary);
+}
 .nds-stat__label {
   font: var(--nds-type-caption);
   letter-spacing: var(--nds-type-caption-tracking);
