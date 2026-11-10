@@ -10,17 +10,17 @@ Catálogo online (Storybook): https://jobremote.github.io/nogasds/
 
 ## Componentes
 
-Na `0.5.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
+Na `0.6.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
 
 | Grupo | Componentes |
 | --- | --- |
 | Botões | `Button` (4 variantes × 2 tamanhos, com ícone `leadingIcon` e `trailingIcon` opcionais), `IconButton` |
 | Formulários | `TextField`, `TextArea`, `Select` (combo box), `DateField` + `DatePicker`, `Rating`, `CodeField`, `SearchField` |
 | Seleção | `Checkbox`, `Radio`, `Switch`, `Tag` |
-| Feedback | `Banner`, `Badge` |
+| Feedback | `Banner`, `Badge`, `Modal` |
 | Avatar | `Avatar` |
 | Navegação | `Link`, `MenuItem`, `Tabs`, `TopBar` e `MobileTopBar`, `TabBar` |
-| Conteúdo | `Card`, `Stat`, `ProfileSummary`, `SuggestedAccount`, `Promo` |
+| Conteúdo | `Card`, `Cover`, `ItemCard`, `BoardColumn`, `Stat` (destaque principal ou secundário), `ProfileSummary`, `SuggestedAccount`, `Promo` |
 | Feed | `PostComposer`, `Post` e `PostAction` |
 | Base | `Icon` (subconjunto dos ícones do Figma), `Logo` (logos de marca coloridos, hoje `google`) |
 

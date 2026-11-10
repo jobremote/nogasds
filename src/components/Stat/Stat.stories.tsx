@@ -31,6 +31,12 @@ export const TodosOsEstados: Story = {
           <Stat value={96} label="Seguindo" />
         </dl>
       </Section>
+      <Section title="Destaque">
+        <dl className="sb-row" style={{ margin: 0 }}>
+          <Stat value={12} label="Principal" />
+          <Stat value={12} label="Secundário" emphasis="secondary" />
+        </dl>
+      </Section>
     </Canvas>
   ),
 };

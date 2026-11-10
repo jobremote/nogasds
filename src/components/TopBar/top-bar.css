@@ -6,7 +6,16 @@
   gap: calc(var(--nds-space-gap-2xl) + var(--nds-space-gap-sm));
   width: 100%;
   height: var(--nds-size-nav-height);
-  padding: var(--nds-space-inset-sm) 60px;
+  /*
+   * Laterais: 60 px por padrão. Para alinhar a marca e as ações às bordas da coluna de conteúdo da página (como no
+   * LinkedIn), defina no produto `--nds-top-bar-content-width` (largura da coluna) e, se quiser, `--nds-top-bar-gutter`
+   * (respiro mínimo em telas estreitas). Sem a largura, nada muda.
+   */
+  padding-block: var(--nds-space-inset-sm);
+  padding-inline: max(
+    var(--nds-top-bar-gutter, 60px),
+    calc((100% - var(--nds-top-bar-content-width, 100%)) / 2)
+  );
   border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
   background: var(--nds-surface-base);
   color: var(--nds-text-primary);
