@@ -8,6 +8,10 @@ export interface TabItem {
   /** `id` do painel que a aba controla (opcional, mas recomendado). */
   controls?: string;
   disabled?: boolean;
+  /** Figma: Preenchido. Mostra um ponto na aba que já tem algo preenchido. */
+  filled?: boolean;
+  /** Texto para leitor de tela quando a aba está preenchida. Padrão: "preenchida". */
+  filledLabel?: string;
 }
 
 export interface TabsProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
@@ -62,6 +66,12 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
             onKeyDown={(event) => onKeyDown(event, index)}
           >
             {item.label}
+            {item.filled ? (
+              <>
+                <span className="nds-tabs__dot" aria-hidden="true" />
+                <span className="nds-tabs__filled-label"> ({item.filledLabel ?? 'preenchida'})</span>
+              </>
+            ) : null}
           </button>
         );
       })}

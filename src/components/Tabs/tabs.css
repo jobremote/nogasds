@@ -31,3 +31,25 @@
   cursor: not-allowed;
   color: var(--nds-text-disabled);
 }
+
+/* Ponto de aba preenchida (Figma: Preenchido) */
+.nds-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nds-space-gap-sm);
+}
+.nds-tabs__dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--nds-radius-round);
+  background: var(--nds-action-bg);
+}
+.nds-tabs__filled-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

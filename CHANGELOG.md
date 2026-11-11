@@ -2,6 +2,14 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.8.0] - 2026-11-11
+
+### Adicionado
+- `MonthYearField` (Figma: **Campo de mês/ano**): data só com mês e ano, em dois campos que podem ficar vazios. Com `name`, envia `<name>Month` e `<name>Year`.
+- `DurationField` (Figma: **Campo de tempo**): tempo em horas e minutos (minutos até 59). Com `name`, envia `<name>Hours` e `<name>Minutes`.
+- `Button` ganha as variantes `danger` (Perigo) e `danger-ghost` (Perigo fantasma), para ações destrutivas. Usam os tokens de status de erro; o sistema ainda não tem tokens próprios de ação de perigo.
+- `Tabs`: `filled` em cada aba (Figma: **Preenchido**) mostra um ponto e avisa o leitor de tela ("preenchida").
+
 ## [0.7.0] - 2026-11-11
 
 ### Adicionado

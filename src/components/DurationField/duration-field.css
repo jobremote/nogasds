@@ -1,0 +1,91 @@
+.nds-duration {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--nds-space-gap-sm);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--nds-text-primary);
+}
+.nds-duration__legend {
+  margin: 0 0 var(--nds-space-gap-sm);
+  padding: 0;
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-duration__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--nds-space-gap-md);
+}
+.nds-duration__part {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-gap-sm);
+  height: 40px;
+  padding: 0 var(--nds-space-inset-md);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
+  background: var(--nds-surface-sunken);
+}
+.nds-duration__part:hover {
+  border-color: var(--nds-border-strong);
+}
+.nds-duration__part:focus-within {
+  border-color: transparent;
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}
+.nds-duration__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--nds-text-primary);
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  appearance: textfield;
+}
+.nds-duration__input::-webkit-outer-spin-button,
+.nds-duration__input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+.nds-duration__input::placeholder {
+  color: var(--nds-text-muted);
+  opacity: 1;
+}
+.nds-duration__unit {
+  flex: none;
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  color: var(--nds-text-secondary);
+}
+.nds-duration__message {
+  margin: 0;
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}
+.nds-duration--invalid .nds-duration__part {
+  border-color: var(--nds-status-danger-border);
+}
+.nds-duration--invalid .nds-duration__message {
+  color: var(--nds-status-danger-fg);
+}
+.nds-duration:disabled .nds-duration__legend,
+.nds-duration:disabled .nds-duration__message,
+.nds-duration:disabled .nds-duration__unit,
+.nds-duration:disabled .nds-duration__input {
+  color: var(--nds-text-disabled);
+}
+.nds-duration:disabled .nds-duration__part {
+  border-color: var(--nds-border-subtle);
+  background: var(--nds-surface-raised);
+}
