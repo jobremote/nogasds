@@ -1,0 +1,53 @@
+.nds-choice-card {
+  position: relative;
+  display: flex;
+}
+.nds-choice-card__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.nds-choice-card__body {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--nds-space-gap-xs);
+  padding: var(--nds-space-inset-lg);
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
+  background: var(--nds-surface-raised);
+  color: var(--nds-text-primary);
+  pointer-events: none;
+}
+.nds-choice-card__title {
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-choice-card__description {
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-secondary);
+}
+.nds-choice-card__input:hover + .nds-choice-card__body {
+  background: var(--nds-action-subtle-bg);
+}
+.nds-choice-card__input:checked + .nds-choice-card__body {
+  border-color: var(--nds-action-bg);
+  background: var(--nds-action-subtle-bg);
+  box-shadow: inset 0 0 0 var(--nds-stroke-default) var(--nds-action-bg);
+}
+.nds-choice-card__input:focus-visible + .nds-choice-card__body {
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: var(--nds-stroke-focus);
+}
+.nds-choice-card--disabled .nds-choice-card__input {
+  cursor: not-allowed;
+}
+.nds-choice-card--disabled .nds-choice-card__body {
+  color: var(--nds-text-disabled);
+}

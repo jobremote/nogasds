@@ -2,6 +2,15 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.7.0] - 2026-11-11
+
+### Adicionado
+- `Toast` (Figma: **Toast**): aviso temporário de uma ação, em Informação, Sucesso ou Erro, com botão de fechar opcional (`onClose`). Só desenha o aviso; posição e fechamento automático ficam com quem usa.
+- `Menu` e `MenuOption`: botão que abre uma lista de ações. Fecha com Esc, clique fora ou ao escolher uma opção; setas, Home e End percorrem as opções. `MenuOption` aceita ícone e `danger` (ação destrutiva).
+- `ResultItem` (Figma: **Resultado de jogo**): linha de resultado de busca com capa, título, apoio e uma ação à direita (botão ou selo de status).
+- `Menu` vira folha presa embaixo da tela em telas estreitas (até 640 px), sem ser cortado por áreas com rolagem.
+- `ChoiceCard` (Figma: **Opção de status**): escolha única em formato de cartão, com título e descrição.
+
 ## [0.6.0] - 2026-11-10
 
 ### Adicionado

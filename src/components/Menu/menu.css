@@ -1,0 +1,95 @@
+.nds-menu {
+  position: relative;
+  display: inline-block;
+}
+.nds-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nds-space-inset-sm);
+  border: 0;
+  border-radius: var(--nds-radius-default);
+  background: transparent;
+  color: var(--nds-text-secondary);
+  cursor: pointer;
+}
+.nds-menu__trigger:hover {
+  background: var(--nds-action-subtle-bg);
+  color: var(--nds-text-primary);
+}
+.nds-menu__trigger:focus-visible,
+.nds-menu__option:focus-visible {
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
+}
+.nds-menu__list {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  box-sizing: border-box;
+  display: flex;
+  min-width: 200px;
+  margin-top: var(--nds-space-gap-xs);
+  flex-direction: column;
+  padding: var(--nds-space-inset-xs);
+  border: var(--nds-stroke-default) solid var(--nds-border-default);
+  border-radius: var(--nds-radius-default);
+  background: var(--nds-surface-raised);
+}
+.nds-menu__list--start {
+  left: 0;
+}
+.nds-menu__list--end {
+  right: 0;
+}
+.nds-menu__option {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-gap-md);
+  width: 100%;
+  margin: 0;
+  padding: var(--nds-space-inset-md);
+  border: 0;
+  border-radius: var(--nds-radius-default);
+  background: transparent;
+  color: var(--nds-text-primary);
+  cursor: pointer;
+  text-align: left;
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-menu__option:hover {
+  background: var(--nds-action-subtle-bg);
+}
+.nds-menu__option:disabled {
+  color: var(--nds-text-disabled);
+  cursor: not-allowed;
+}
+.nds-menu__option--danger {
+  color: var(--nds-status-danger-fg);
+}
+.nds-menu__option--danger:hover {
+  background: var(--nds-status-danger-bg);
+}
+
+/* Celular: o menu vira uma folha presa embaixo da tela (Figma: Menu Mover para). Com `position: fixed` ele também
+   não é cortado por contêineres com rolagem, como o kanban. */
+@media (max-width: 640px) {
+  .nds-menu__list {
+    position: fixed;
+    z-index: 30;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 0;
+    margin: 0;
+    padding: var(--nds-space-inset-md);
+    border-width: var(--nds-stroke-default) 0 0;
+    border-radius: 0;
+  }
+  .nds-menu__option {
+    padding: var(--nds-space-inset-lg) var(--nds-space-inset-md);
+  }
+}
