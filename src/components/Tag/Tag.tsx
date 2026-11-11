@@ -3,9 +3,13 @@ import { cx } from '../cx';
 import { Icon } from '../Icon/Icon';
 import './tag.css';
 
+export type TagColor = 'neutral' | 'wine' | 'petrol' | 'olive' | 'rose' | 'sky';
+
 export interface TagProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
   /** Texto da tag. */
   children: ReactNode;
+  /** Figma: Cor (Neutro, Vinho, Petróleo, Oliva, Rosa, Céu). Padrão: neutro. */
+  color?: TagColor;
   /** Figma: Estado Selecionado. Quando definido, o botão vira um alternador (`aria-pressed`). */
   selected?: boolean;
   /** Figma: Removível. Mostra o botão de remover e chama a função ao ativá-lo. */
@@ -15,11 +19,11 @@ export interface TagProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 
 }
 
 export const Tag = forwardRef<HTMLButtonElement, TagProps>(function Tag(
-  { children, selected, onRemove, removeLabel = 'Remover', className, disabled, type = 'button', ...rest },
+  { children, color = 'neutral', selected, onRemove, removeLabel = 'Remover', className, disabled, type = 'button', ...rest },
   ref,
 ) {
   return (
-    <span className={cx('nds-tag', selected && 'nds-tag--selected', disabled && 'nds-tag--disabled', className)}>
+    <span className={cx('nds-tag', `nds-tag--${color}`, selected && 'nds-tag--selected', disabled && 'nds-tag--disabled', className)}>
       <button
         {...rest}
         ref={ref}

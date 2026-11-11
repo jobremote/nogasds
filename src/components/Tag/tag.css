@@ -40,6 +40,62 @@
   color: var(--nds-text-secondary);
 }
 
+/* Cores (Figma: Cor). Neutro é o visual padrão acima. */
+.nds-tag--wine,
+.nds-tag--wine:hover:not(.nds-tag--disabled) {
+  background: var(--nds-block-wine-bg);
+  border-color: var(--nds-block-wine-bg);
+  color: var(--nds-block-fg);
+}
+.nds-tag--wine .nds-tag__remove {
+  color: var(--nds-block-fg-muted);
+}
+.nds-tag--petrol,
+.nds-tag--petrol:hover:not(.nds-tag--disabled) {
+  background: var(--nds-block-petrol-bg);
+  border-color: var(--nds-block-petrol-bg);
+  color: var(--nds-block-fg);
+}
+.nds-tag--petrol .nds-tag__remove {
+  color: var(--nds-block-fg-muted);
+}
+.nds-tag--olive,
+.nds-tag--olive:hover:not(.nds-tag--disabled) {
+  background: var(--nds-block-olive-bg);
+  border-color: var(--nds-block-olive-bg);
+  color: var(--nds-block-fg);
+}
+.nds-tag--olive .nds-tag__remove {
+  color: var(--nds-block-fg-muted);
+}
+.nds-tag--rose,
+.nds-tag--rose:hover:not(.nds-tag--disabled) {
+  background: var(--nds-accent-rose-bg);
+  border-color: var(--nds-accent-rose-bg);
+  color: var(--nds-accent-rose-fg);
+}
+.nds-tag--rose .nds-tag__remove {
+  color: var(--nds-accent-rose-fg);
+}
+.nds-tag--sky,
+.nds-tag--sky:hover:not(.nds-tag--disabled) {
+  background: var(--nds-accent-sky-bg);
+  border-color: var(--nds-accent-sky-bg);
+  color: var(--nds-accent-sky-fg);
+}
+.nds-tag--sky .nds-tag__remove {
+  color: var(--nds-accent-sky-fg);
+}
+/* Etiqueta só de leitura (sem botão), usada nos cards. */
+.nds-tag--static {
+  padding: var(--nds-space-inset-xs) var(--nds-space-inset-sm);
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+}
+.nds-tag--static:hover {
+  cursor: default;
+}
+
 .nds-tag--selected {
   background: var(--nds-text-primary);
   border-color: var(--nds-text-primary);
