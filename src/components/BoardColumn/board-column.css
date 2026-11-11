@@ -27,6 +27,13 @@
   letter-spacing: var(--nds-type-label-small-tracking);
   color: var(--nds-text-muted);
 }
+.nds-board-column__title {
+  flex: 1 1 auto;
+}
+.nds-board-column__action {
+  display: inline-flex;
+  flex: none;
+}
 .nds-board-column__list {
   display: flex;
   flex-direction: column;

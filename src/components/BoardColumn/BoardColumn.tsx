@@ -11,13 +11,15 @@ export interface BoardColumnProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
   children?: ReactNode;
   /** Mensagem da coluna vazia. */
   emptyMessage?: ReactNode;
+  /** Ação no cabeçalho, depois da contagem (por exemplo, um `<IconButton>` "Adicionar"). */
+  action?: ReactNode;
   /** Nível do título (`h2`…`h6`). Padrão: `h3`. */
   headingLevel?: 2 | 3 | 4 | 5 | 6;
 }
 
 /** Coluna de um quadro kanban (Figma: Coluna do Game Shelf). */
 export const BoardColumn = forwardRef<HTMLElement, BoardColumnProps>(function BoardColumn(
-  { title, count, children, emptyMessage, headingLevel = 3, className, ...rest },
+  { title, count, children, emptyMessage, action, headingLevel = 3, className, ...rest },
   ref,
 ) {
   const headingId = useId();
@@ -30,6 +32,7 @@ export const BoardColumn = forwardRef<HTMLElement, BoardColumnProps>(function Bo
           {title}
         </Heading>
         <span className="nds-board-column__count">{count}</span>
+        {action ? <span className="nds-board-column__action">{action}</span> : null}
       </header>
       {items.length > 0 ? (
         <ul className="nds-board-column__list">
