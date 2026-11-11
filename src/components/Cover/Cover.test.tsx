@@ -16,6 +16,18 @@ describe('Cover', () => {
     expect(screen.getByRole('img', { name: 'Paisagem' })).toHaveAttribute('src', '/capa.jpg');
   });
 
+  it('o enquadramento vertical vai de 0 a 100 (padrão 50, centro) e é limitado a essa faixa', () => {
+    const { container, rerender } = render(<Cover src="/capa.jpg" />);
+    const image = () => container.querySelector('img') as HTMLImageElement;
+    expect(image().style.objectPosition).toBe('50% 50%');
+    rerender(<Cover src="/capa.jpg" positionY={20} />);
+    expect(image().style.objectPosition).toBe('50% 20%');
+    rerender(<Cover src="/capa.jpg" positionY={250} />);
+    expect(image().style.objectPosition).toBe('50% 100%');
+    rerender(<Cover src="/capa.jpg" positionY={-5} />);
+    expect(image().style.objectPosition).toBe('50% 0%');
+  });
+
   it('a imagem é decorativa por padrão', () => {
     const { container } = render(<Cover src="/capa.jpg" />);
     expect(container.querySelector('img')).toHaveAttribute('alt', '');

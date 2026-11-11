@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.11.0] - 2026-11-12
+
+### Adicionado
+- `Cover` ganha `positionY` (0 a 100, padrão 50): enquadramento vertical da imagem de capa, para o produto deixar a pessoa posicionar a imagem.
+
 ## [0.10.0] - 2026-11-11
 
 ### Adicionado
