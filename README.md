@@ -4,19 +4,19 @@ Design system **neutro e coringa** (tokens e componentes React), pensado para se
 
 O **Figma é a fonte da verdade**: os tokens e componentes daqui seguem os arquivos do NogasDS no Figma (Primitives, Foundations, Components e Icons).
 
-Versão atual: `0.8.0`. Ainda **não está publicado no npm**.
+Versão atual: `0.9.0`. Ainda **não está publicado no npm**.
 
 Catálogo online (Storybook): https://jobremote.github.io/nogasds/
 
 ## Componentes
 
-Na `0.8.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
+Na `0.9.0` o catálogo cobre todos os componentes do Figma. Nomes e props em inglês; o nome em português do Figma aparece na documentação de cada prop.
 
 | Grupo | Componentes |
 | --- | --- |
 | Botões | `Button` (6 variantes, incluindo Perigo, × 2 tamanhos, com ícone `leadingIcon` e `trailingIcon` opcionais), `IconButton` |
 | Formulários | `TextField`, `TextArea`, `Select` (combo box), `DateField` + `DatePicker`, `MonthYearField`, `DurationField`, `Rating`, `CodeField`, `SearchField` |
-| Seleção | `Checkbox`, `Radio`, `ChoiceCard`, `Switch`, `Tag` |
+| Seleção | `Checkbox`, `Radio`, `ChoiceCard`, `Switch`, `Tag` (com cor), `ColorPicker` |
 | Feedback | `Banner`, `Toast`, `Badge`, `Modal` |
 | Avatar | `Avatar` |
 | Navegação | `Link`, `MenuItem`, `Menu` e `MenuOption`, `Tabs`, `TopBar` e `MobileTopBar`, `TabBar` |

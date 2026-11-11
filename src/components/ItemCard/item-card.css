@@ -52,3 +52,11 @@
   letter-spacing: var(--nds-type-label-small-tracking);
   color: var(--nds-text-primary);
 }
+.nds-item-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nds-space-gap-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

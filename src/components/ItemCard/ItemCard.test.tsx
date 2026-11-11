@@ -26,6 +26,17 @@ describe('ItemCard', () => {
     expect(container.querySelector('.nds-item-card__thumbnail img')).toHaveAttribute('src', '/m.jpg');
   });
 
+  it('mostra as tags só de leitura, com cor, e não mostra a lista sem tags', () => {
+    const { container, rerender } = render(<ItemCard title="Celeste" tags={[{ label: 'Top da vida', color: 'wine' }, { label: 'Zerar de novo' }]} />);
+    const list = screen.getByRole('list', { name: 'Tags' });
+    expect(list.querySelectorAll('li')).toHaveLength(2);
+    expect(screen.getByText('Top da vida')).toHaveClass('nds-tag--wine');
+    expect(screen.getByText('Zerar de novo')).toHaveClass('nds-tag--neutral');
+    expect(screen.queryByRole('button')).toBeNull();
+    rerender(<ItemCard title="Celeste" tags={[]} />);
+    expect(container.querySelector('.nds-item-card__tags')).toBeNull();
+  });
+
   it('não tem violações de acessibilidade', async () => {
     const { container } = render(<ItemCard title="Título" detail="Apoio" rating={5} />);
     expect(await axe(container)).toHaveNoViolations();

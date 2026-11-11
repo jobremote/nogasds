@@ -1,0 +1,102 @@
+.nds-color-picker {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--nds-space-gap-sm);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--nds-text-primary);
+}
+.nds-color-picker__legend {
+  margin: 0 0 var(--nds-space-gap-sm);
+  padding: 0;
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
+.nds-color-picker__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nds-space-gap-md);
+}
+.nds-color-picker__option {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+.nds-color-picker__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+/* O nome da cor fica só para leitor de tela; a cor aparece no quadrado. */
+.nds-color-picker__name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.nds-color-picker__swatch {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: var(--nds-stroke-default) solid var(--nds-border-control);
+  border-radius: var(--nds-radius-default);
+}
+.nds-color-picker__option:hover .nds-color-picker__swatch {
+  border-color: var(--nds-border-strong);
+}
+.nds-color-picker__input:checked + .nds-color-picker__swatch {
+  border-color: var(--nds-text-primary);
+  box-shadow: 0 0 0 var(--nds-stroke-default) var(--nds-text-primary);
+}
+.nds-color-picker__input:focus-visible + .nds-color-picker__swatch {
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: var(--nds-stroke-focus);
+}
+
+.nds-color-picker__option--neutral .nds-color-picker__swatch {
+  background: var(--nds-action-subtle-bg);
+  color: var(--nds-text-primary);
+}
+.nds-color-picker__option--wine .nds-color-picker__swatch {
+  background: var(--nds-block-wine-bg);
+  color: var(--nds-block-fg);
+}
+.nds-color-picker__option--petrol .nds-color-picker__swatch {
+  background: var(--nds-block-petrol-bg);
+  color: var(--nds-block-fg);
+}
+.nds-color-picker__option--olive .nds-color-picker__swatch {
+  background: var(--nds-block-olive-bg);
+  color: var(--nds-block-fg);
+}
+.nds-color-picker__option--rose .nds-color-picker__swatch {
+  background: var(--nds-accent-rose-bg);
+  color: var(--nds-accent-rose-fg);
+}
+.nds-color-picker__option--sky .nds-color-picker__swatch {
+  background: var(--nds-accent-sky-bg);
+  color: var(--nds-accent-sky-fg);
+}
+
+.nds-color-picker:disabled .nds-color-picker__legend {
+  color: var(--nds-text-disabled);
+}
+.nds-color-picker:disabled .nds-color-picker__option,
+.nds-color-picker:disabled .nds-color-picker__input {
+  cursor: not-allowed;
+}
+.nds-color-picker:disabled .nds-color-picker__swatch {
+  opacity: 0.4;
+}

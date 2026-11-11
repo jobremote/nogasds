@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.9.0] - 2026-11-11
+
+### Adicionado
+- `Tag` ganha a prop `color` (Figma: **Cor**): Neutro (padrão), Vinho, Petróleo, Oliva, Rosa e Céu. Usa os tokens de bloco e de acento.
+- `ColorPicker` (Figma: **Seletor de cor**): escolha única entre as 6 cores de tag, com o nome de cada cor para leitor de tela e setas do teclado. Exporta `COLOR_LABELS`.
+- `ItemCard` ganha `tags` (Figma: **Tags** no Card de jogo): etiquetas só de leitura, com cor, abaixo da nota.
+
 ## [0.8.0] - 2026-11-11
 
 ### Adicionado

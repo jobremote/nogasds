@@ -9,6 +9,16 @@ describe('Tag', () => {
     expect(screen.getByRole('button', { name: 'Rótulo' })).not.toHaveAttribute('aria-pressed');
   });
 
+  it('aplica a cor (neutro por padrão) e passa na acessibilidade', async () => {
+    const { container, rerender } = render(<Tag>Rótulo</Tag>);
+    expect(container.querySelector('.nds-tag')).toHaveClass('nds-tag--neutral');
+    for (const color of ['wine', 'petrol', 'olive', 'rose', 'sky'] as const) {
+      rerender(<Tag color={color}>Rótulo</Tag>);
+      expect(container.querySelector('.nds-tag')).toHaveClass(`nds-tag--${color}`);
+    }
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it('com `selected` expõe aria-pressed e dispara onClick', async () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
