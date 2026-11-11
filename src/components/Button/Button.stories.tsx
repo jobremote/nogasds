@@ -8,7 +8,7 @@ const meta = {
   component: Button,
   args: { children: 'Botão' },
   argTypes: {
-    variant: { control: 'inline-radio', options: ['primary', 'secondary', 'outline', 'ghost'] },
+    variant: { control: 'inline-radio', options: ['primary', 'secondary', 'outline', 'ghost', 'danger', 'danger-ghost'] },
     size: { control: 'inline-radio', options: ['md', 'sm'] },
   },
 } satisfies Meta<typeof Button>;
@@ -29,6 +29,8 @@ const variants: Array<[ButtonVariant, string]> = [
   ['secondary', 'Secundário'],
   ['outline', 'Contorno'],
   ['ghost', 'Fantasma'],
+  ['danger', 'Perigo'],
+  ['danger-ghost', 'Perigo fantasma'],
 ];
 const sizes: Array<[ButtonSize, string]> = [
   ['md', 'Médio'],

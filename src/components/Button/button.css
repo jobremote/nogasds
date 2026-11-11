@@ -77,12 +77,30 @@
   background: var(--nds-action-subtle-bg);
 }
 
+/* Perigo: ações destrutivas. Usa os tokens de status de erro (o sistema ainda não tem tokens de ação de perigo). */
+.nds-button--danger {
+  border-width: var(--nds-stroke-default);
+  border-color: var(--nds-status-danger-border);
+  background: var(--nds-status-danger-bg);
+  color: var(--nds-status-danger-fg);
+}
+.nds-button--danger:hover:not(:disabled) {
+  background: var(--nds-status-danger-border);
+}
+.nds-button--danger-ghost {
+  color: var(--nds-status-danger-fg);
+}
+.nds-button--danger-ghost:hover:not(:disabled) {
+  background: var(--nds-status-danger-bg);
+}
+
 /* Foco: anel de 2px por fora */
 .nds-button:focus-visible {
   outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
   outline-offset: 0;
 }
-.nds-button--outline:focus-visible {
+.nds-button--outline:focus-visible,
+.nds-button--danger:focus-visible {
   border-color: transparent;
 }
 
@@ -93,6 +111,10 @@
 }
 .nds-button--primary:disabled,
 .nds-button--secondary:disabled {
+  background: var(--nds-action-subtle-bg);
+}
+.nds-button--danger:disabled {
+  border-color: var(--nds-border-subtle);
   background: var(--nds-action-subtle-bg);
 }
 .nds-button--outline:disabled {

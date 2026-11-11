@@ -13,6 +13,19 @@ describe('Button', () => {
     expect(button).toHaveClass('nds-button--outline', 'nds-button--sm');
   });
 
+  it('Perigo e Perigo fantasma aplicam a variante e passam na acessibilidade', async () => {
+    const { container } = render(
+      <>
+        <Button variant="danger">Remover</Button>
+        <Button variant="danger-ghost">Remover jogo</Button>
+        <Button variant="danger" disabled>Remover</Button>
+      </>,
+    );
+    expect(screen.getByRole('button', { name: 'Remover jogo' })).toHaveClass('nds-button--danger-ghost');
+    expect(screen.getAllByRole('button', { name: 'Remover' })[0]).toHaveClass('nds-button--danger');
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it('dispara onClick e não dispara quando desabilitado', async () => {
     const user = userEvent.setup();
     const onClick = vi.fn();

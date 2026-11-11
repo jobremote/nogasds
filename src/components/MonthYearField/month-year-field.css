@@ -1,0 +1,49 @@
+.nds-month-year {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--nds-space-gap-sm);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--nds-text-primary);
+}
+.nds-month-year__legend {
+  margin: 0 0 var(--nds-space-gap-sm);
+  padding: 0;
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+  color: var(--nds-text-primary);
+}
+.nds-month-year__row {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--nds-space-gap-md);
+}
+/* O nome de cada campo é a própria opção vazia ("Mês" e "Ano"); o rótulo existe só para leitor de tela. */
+.nds-month-year__hidden-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* O Select desenha a mensagem de erro; aqui a mensagem é uma só, abaixo do grupo. */
+.nds-month-year .nds-text-field__message {
+  display: none;
+}
+.nds-month-year__message {
+  margin: 0;
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}
+.nds-month-year--invalid .nds-month-year__message {
+  color: var(--nds-status-danger-fg);
+}
+.nds-month-year:disabled .nds-month-year__legend,
+.nds-month-year:disabled .nds-month-year__message {
+  color: var(--nds-text-disabled);
+}

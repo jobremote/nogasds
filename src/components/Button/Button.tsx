@@ -2,11 +2,11 @@ import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { cx } from '../cx';
 import './button.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'danger-ghost';
 export type ButtonSize = 'md' | 'sm';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Figma: Variante (Primário, Secundário, Contorno, Fantasma). */
+  /** Figma: Variante (Primário, Secundário, Contorno, Fantasma, Perigo, Perigo fantasma). Perigo é para ações destrutivas, como remover. */
   variant?: ButtonVariant;
   /** Figma: Tamanho (Médio, Pequeno). */
   size?: ButtonSize;

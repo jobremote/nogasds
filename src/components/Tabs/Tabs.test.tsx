@@ -56,6 +56,14 @@ describe('Tabs', () => {
     expect(screen.getByRole('tab', { name: 'Primeira' })).toHaveFocus();
   });
 
+  it('aba preenchida mostra o ponto e avisa o leitor de tela', () => {
+    render(<Tabs label="Exemplo" items={[{ value: 'um', label: 'Jogatina', filled: true }, { value: 'dois', label: 'Review' }]} value="um" onChange={() => undefined} />);
+    const filled = screen.getByRole('tab', { name: /Jogatina/ });
+    expect(filled).toHaveTextContent('Jogatina (preenchida)');
+    expect(filled.querySelector('.nds-tabs__dot')).not.toBeNull();
+    expect(screen.getByRole('tab', { name: 'Review' }).querySelector('.nds-tabs__dot')).toBeNull();
+  });
+
   it('não tem violações de acessibilidade', async () => {
     const { container } = render(<Tabs label="Exemplo" items={items} value="um" onChange={() => undefined} />);
     expect(await axe(container)).toHaveNoViolations();
