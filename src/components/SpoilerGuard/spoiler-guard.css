@@ -1,0 +1,27 @@
+.nds-spoiler {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.nds-spoiler--hidden .nds-spoiler__content {
+  filter: blur(24px);
+  user-select: none;
+  pointer-events: none;
+}
+.nds-spoiler__cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nds-space-gap-sm);
+  padding: var(--nds-space-inset-lg);
+  /* Fundo quase opaco: o desfoque dá a ideia do conteúdo sem entregar o spoiler; o texto do aviso fica nítido. */
+  background: color-mix(in srgb, var(--nds-surface-base) 88%, transparent);
+  color: var(--nds-text-primary);
+}
+.nds-spoiler__label {
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+}
