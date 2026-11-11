@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.10.0] - 2026-11-11
+
+### Adicionado
+- `ScreenshotField` (Figma: **Área de screenshot**): área para enviar uma imagem, com prévia, "Trocar imagem" e "Remover imagem", estado de envio, texto de ajuda e erro. Só aceita JPG, PNG e WebP no seletor; o envio em si é de quem usa.
+- `SpoilerGuard`: esconde um conteúdo com spoiler (imagem ou texto) atrás de um aviso e do botão "Mostrar". Escondido, o conteúdo fica desfocado e fora do alcance de leitor de tela e de foco.
+
 ## [0.9.0] - 2026-11-11
 
 ### Adicionado
