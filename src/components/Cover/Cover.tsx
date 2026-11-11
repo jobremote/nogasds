@@ -10,6 +10,8 @@ export interface CoverProps extends HTMLAttributes<HTMLDivElement> {
   alt?: string;
   /** Sem `src`: mostra o espaço da imagem, com o ícone de imagem, em vez da cor sólida (Figma: Tipo = Imagem sem foto). */
   placeholder?: boolean;
+  /** Enquadramento vertical da imagem, de 0 (topo) a 100 (base). Padrão: 50 (centro). Só vale com `src`. */
+  positionY?: number;
 }
 
 /**
@@ -17,7 +19,7 @@ export interface CoverProps extends HTMLAttributes<HTMLDivElement> {
  * em telas estreitas (Figma: Tamanho Desktop e Mobile).
  */
 export const Cover = forwardRef<HTMLDivElement, CoverProps>(function Cover(
-  { src, alt = '', placeholder, className, ...rest },
+  { src, alt = '', placeholder, positionY = 50, className, ...rest },
   ref,
 ) {
   const empty = !src;
@@ -28,7 +30,7 @@ export const Cover = forwardRef<HTMLDivElement, CoverProps>(function Cover(
       className={cx('nds-cover', empty && placeholder && 'nds-cover--placeholder', className)}
     >
       {src ? (
-        <img className="nds-cover__image" src={src} alt={alt} />
+        <img className="nds-cover__image" src={src} alt={alt} style={{ objectPosition: `50% ${Math.min(100, Math.max(0, positionY))}%` }} />
       ) : placeholder ? (
         <Icon name="image" size={32} />
       ) : null}

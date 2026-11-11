@@ -1,6 +1,6 @@
 {
   "name": "nogasds",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "NogasDS: design system neutro (tokens e componentes React).",
   "license": "UNLICENSED",
   "type": "module",

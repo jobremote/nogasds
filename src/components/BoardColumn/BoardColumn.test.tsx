@@ -16,6 +16,13 @@ describe('BoardColumn', () => {
     expect(screen.getByText('2')).toBeInTheDocument();
   });
 
+  it('mostra a ação do cabeçalho depois da contagem, só quando há', () => {
+    const { rerender } = render(<BoardColumn title="Coluna" count={1} action={<button type="button">Adicionar jogo</button>} />);
+    expect(screen.getByRole('button', { name: 'Adicionar jogo' })).toBeInTheDocument();
+    rerender(<BoardColumn title="Coluna" count={1} />);
+    expect(screen.queryByRole('button')).toBeNull();
+  });
+
   it('lista os itens', () => {
     render(
       <BoardColumn title="Coluna" count={2}>

@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.11.0] - 2026-11-12
+
+### Adicionado
+- `BoardColumn` ganha `action`: espaço no cabeçalho, depois da contagem, para um botão da coluna (por exemplo, "Adicionar jogo").
+- `Cover` ganha `positionY` (0 a 100, padrão 50): enquadramento vertical da imagem de capa, para o produto deixar a pessoa posicionar a imagem.
+
 ## [0.10.0] - 2026-11-11
 
 ### Adicionado
