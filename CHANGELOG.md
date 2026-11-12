@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.13.1] - 2026-11-12
+
+### Corrigido
+- `BoardColumn` com `maxHeight`: o gesto horizontal que começa em cima de um card voltou a rolar o carrossel de colunas no celular (o `overscroll-behavior` da lista agora prende só o eixo vertical).
+
 ## [0.13.0] - 2026-11-12
 
 ### Adicionado
