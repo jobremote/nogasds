@@ -41,3 +41,21 @@
 .nds-search-field__input::-webkit-search-cancel-button {
   appearance: none;
 }
+.nds-search-field__clear {
+  display: inline-flex;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--nds-radius-default);
+  background: transparent;
+  color: var(--nds-text-secondary);
+  cursor: pointer;
+}
+.nds-search-field__clear:hover {
+  color: var(--nds-text-primary);
+}
+.nds-search-field__clear:focus-visible {
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}

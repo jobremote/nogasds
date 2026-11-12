@@ -12,6 +12,8 @@ export interface ModalProps extends Omit<DialogHTMLAttributes<HTMLDialogElement>
   title: ReactNode;
   /** Nome acessível do botão de fechar. */
   closeLabel?: string;
+  /** Clicar no fundo escurecido fecha o modal. Padrão: `false` (fecha só no X, no Esc ou nos botões do rodapé). */
+  closeOnBackdropClick?: boolean;
   /** Corpo do modal. */
   children?: ReactNode;
   /** Ações no rodapé, normalmente `<Button variant="outline">` e `<Button>` (Figma: Modal rodapé). */
@@ -20,7 +22,7 @@ export interface ModalProps extends Omit<DialogHTMLAttributes<HTMLDialogElement>
 
 /** Modal sobre o conteúdo, feito com o `<dialog>` nativo (foco preso, Esc e fundo escurecido pelo navegador). */
 export const Modal = forwardRef<HTMLDialogElement, ModalProps>(function Modal(
-  { open, onClose, title, closeLabel = 'Fechar', children, footer, className, ...rest },
+  { open, onClose, title, closeLabel = 'Fechar', closeOnBackdropClick = false, children, footer, className, ...rest },
   ref,
 ) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -57,7 +59,7 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>(function Modal(
       className={cx('nds-modal', className)}
       onCancel={handleCancel}
       onClick={(event) => {
-        if (event.target === event.currentTarget) onClose(); // clique no fundo escurecido
+        if (closeOnBackdropClick && event.target === event.currentTarget) onClose(); // clique no fundo escurecido (opcional)
       }}
     >
       <div className="nds-modal__header">
