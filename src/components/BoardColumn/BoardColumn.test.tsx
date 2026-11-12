@@ -23,6 +23,30 @@ describe('BoardColumn', () => {
     expect(screen.queryByRole('button')).toBeNull();
   });
 
+  it('com maxHeight, limita a altura e só a lista rola (foco pelo teclado); sem maxHeight, nada muda', () => {
+    const { container, rerender } = render(
+      <BoardColumn title="Coluna" count={2}>
+        <ItemCard title="A" />
+        <ItemCard title="B" />
+      </BoardColumn>,
+    );
+    expect(container.querySelector('.nds-board-column__scroll')).toBeNull();
+    expect(screen.getByRole('region', { name: 'Coluna' })).not.toHaveStyle({ maxHeight: '640px' });
+    rerender(
+      <BoardColumn title="Coluna" count={2} maxHeight={640}>
+        <ItemCard title="A" />
+        <ItemCard title="B" />
+      </BoardColumn>,
+    );
+    expect(screen.getByRole('region', { name: 'Coluna' })).toHaveStyle({ maxHeight: '640px' });
+    const scroller = container.querySelector('.nds-board-column__scroll') as HTMLElement;
+    expect(scroller).toHaveAttribute('tabindex', '0');
+    expect(scroller.querySelectorAll('li')).toHaveLength(2);
+    rerender(<BoardColumn title="Coluna" count={0} maxHeight="40rem" emptyMessage="Nada." />);
+    expect(container.querySelector('.nds-board-column__scroll')).toBeNull(); // vazia: sem área de rolagem
+    expect(screen.getByText('Nada.')).toBeInTheDocument();
+  });
+
   it('lista os itens', () => {
     render(
       <BoardColumn title="Coluna" count={2}>
