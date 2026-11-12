@@ -59,10 +59,24 @@ describe('Modal', () => {
     expect(event.defaultPrevented).toBe(true);
   });
 
-  it('clicar fora do conteúdo (no fundo) chama onClose; clicar dentro não', async () => {
+  it('por padrão, clicar no fundo NÃO fecha; fecha só no X (e no Esc)', async () => {
     const onClose = vi.fn();
     render(
       <Modal open onClose={onClose} title="Título">
+        <p>Corpo</p>
+      </Modal>,
+    );
+    await userEvent.click(screen.getByText('Corpo'));
+    await userEvent.click(screen.getByRole('dialog')); // o fundo
+    expect(onClose).not.toHaveBeenCalled();
+    await userEvent.click(screen.getByRole('button', { name: 'Fechar' }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('com closeOnBackdropClick, clicar no fundo fecha; clicar dentro não', async () => {
+    const onClose = vi.fn();
+    render(
+      <Modal open onClose={onClose} title="Título" closeOnBackdropClick>
         <p>Corpo</p>
       </Modal>,
     );

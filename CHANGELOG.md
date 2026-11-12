@@ -2,6 +2,15 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.12.0] - 2026-11-12
+
+### Adicionado
+- `SearchField` ganha `onClear` e `clearLabel`: botão **X** que limpa o campo (aparece só quando há texto, em campo controlado) e devolve o foco.
+- `Modal` ganha `closeOnBackdropClick` (padrão `false`).
+
+### Alterado
+- **Comportamento:** `Modal` não fecha mais ao clicar no fundo escurecido; fecha no X, no Esc e nos botões do rodapé. Quem quiser o comportamento antigo passa `closeOnBackdropClick`.
+
 ## [0.11.0] - 2026-11-12
 
 ### Adicionado
