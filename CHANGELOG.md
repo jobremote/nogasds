@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.13.2] - 2026-11-12
+
+### Corrigido
+- `BoardColumn` com `maxHeight`: a lista não prende mais a rolagem (sem `overscroll-behavior`). No celular, quando a lista chega ao começo ou ao fim, o gesto vertical rola a página.
+
 ## [0.13.1] - 2026-11-12
 
 ### Corrigido
