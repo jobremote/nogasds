@@ -48,3 +48,21 @@
   letter-spacing: var(--nds-type-small-tracking);
   color: var(--nds-text-muted);
 }
+
+/* Com altura máxima: o cabeçalho fica parado e só a lista rola. */
+.nds-board-column--scroll {
+  min-height: 0;
+  overflow: hidden;
+}
+.nds-board-column__scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nds-border-strong) transparent;
+}
+.nds-board-column__scroll:focus-visible {
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: calc(var(--nds-stroke-focus) * -1);
+}

@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.13.0] - 2026-11-12
+
+### Adicionado
+- `BoardColumn` ganha `maxHeight` (Figma: **Kanban com muitos jogos**): altura máxima da coluna; passando dela, o cabeçalho fica parado e só a lista rola (com foco do teclado). O item cortado no fim sugere que há mais. Sem `maxHeight`, nada muda.
+
 ## [0.12.0] - 2026-11-12
 
 ### Adicionado
