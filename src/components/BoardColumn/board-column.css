@@ -58,7 +58,6 @@
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  overscroll-behavior-y: contain; /* só o vertical fica preso; o horizontal passa para o carrossel */
   scrollbar-width: thin;
   scrollbar-color: var(--nds-border-strong) transparent;
 }
