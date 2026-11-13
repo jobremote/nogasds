@@ -24,6 +24,21 @@ describe('PostComposer', () => {
     expect(onSubmit).toHaveBeenCalledWith('Olá');
   });
 
+  it('com canSubmit habilita o envio sem texto (por exemplo, com imagem anexada)', async () => {
+    const user = userEvent.setup();
+    const onSubmit = vi.fn();
+    render(<PostComposer {...base} canSubmit onSubmit={onSubmit} />);
+    await user.click(screen.getByRole('button', { name: 'Publicar' }));
+    expect(onSubmit).toHaveBeenCalledWith('');
+  });
+
+  it('com canSubmit=false barra o envio mesmo com texto', async () => {
+    const user = userEvent.setup();
+    render(<PostComposer {...base} canSubmit={false} />);
+    await user.type(screen.getByRole('textbox'), 'Olá');
+    expect(screen.getByRole('button', { name: 'Publicar' })).toBeDisabled();
+  });
+
   it('só espaços não contam como conteúdo', async () => {
     const user = userEvent.setup();
     render(<PostComposer {...base} />);

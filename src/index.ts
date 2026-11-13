@@ -18,6 +18,7 @@ export { Icon, type IconProps } from './components/Icon/Icon';
 export { iconPaths, type IconName } from './components/Icon/paths';
 export { IconButton, type IconButtonProps } from './components/IconButton/IconButton';
 export { ItemCard, type ItemCardProps, type ItemCardTag } from './components/ItemCard/ItemCard';
+export { MediaTag, type MediaTagProps } from './components/MediaTag/MediaTag';
 export { MonthYearField, MONTH_NAMES, type MonthYearFieldProps, type MonthYearValue } from './components/MonthYearField/MonthYearField';
 export { Link, type LinkProps, type LinkSize } from './components/Link/Link';
 export { Logo, type LogoName, type LogoProps } from './components/Logo/Logo';
