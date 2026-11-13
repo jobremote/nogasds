@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.14.0] - 2026-11-13
+
+### Adicionado
+- `MediaTag` (Figma: **Marca de jogo**): etiqueta com miniatura e nome; com `href` vira um link.
+- `PostComposer` ganha `canSubmit`: habilita ou barra o botão de enviar por conta de quem usa (por exemplo, aceitar o envio só com imagem).
+- `Post` ganha `authorLink`: troca o texto do nome por outro conteúdo, normalmente um link para o perfil.
+
 ## [0.13.2] - 2026-11-12
 
 ### Corrigido

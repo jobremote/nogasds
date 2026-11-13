@@ -6,8 +6,10 @@ import type { IconName } from '../Icon/paths';
 import './post.css';
 
 export interface PostProps extends HTMLAttributes<HTMLElement> {
-  /** Nome de quem publicou. */
+  /** Nome de quem publicou (também é o nome do avatar). */
   author: string;
+  /** Troca o texto do nome por outro conteúdo, normalmente um link para o perfil. Sem ele, mostra `author`. */
+  authorLink?: ReactNode;
   /** Linha abaixo do nome: identificador e horário, por exemplo `@usuario · há 2 h`. */
   meta?: ReactNode;
   /** Propriedades do avatar do autor. */
@@ -27,7 +29,7 @@ export interface PostProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const Post = forwardRef<HTMLElement, PostProps>(function Post(
-  { author, meta, avatar, menu, tags, children, media, actions, endActions, className, ...rest },
+  { author, authorLink, meta, avatar, menu, tags, children, media, actions, endActions, className, ...rest },
   ref,
 ) {
   return (
@@ -35,7 +37,7 @@ export const Post = forwardRef<HTMLElement, PostProps>(function Post(
       <header className="nds-post__header">
         <Avatar {...avatar} name={author} size="md" />
         <div className="nds-post__author">
-          <p className="nds-post__name">{author}</p>
+          <p className="nds-post__name">{authorLink ?? author}</p>
           {meta ? <p className="nds-post__meta">{meta}</p> : null}
         </div>
         {menu}

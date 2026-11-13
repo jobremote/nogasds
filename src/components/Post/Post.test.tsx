@@ -18,6 +18,15 @@ describe('Post', () => {
     expect(screen.getByText('Texto da publicação.')).toBeInTheDocument();
   });
 
+  it('authorLink troca o texto do nome, mantendo o nome do avatar', () => {
+    render(
+      <Post author="Maria da Silva" authorLink={<a href="/maria">Maria da Silva</a>}>
+        Texto
+      </Post>,
+    );
+    expect(screen.getByRole('link', { name: 'Maria da Silva' })).toHaveAttribute('href', '/maria');
+  });
+
   it('só mostra mídia e rodapé quando fornecidos', () => {
     const { container, rerender } = render(<Post author="Maria">Texto</Post>);
     expect(container.querySelector('.nds-post__media')).toBeNull();

@@ -20,6 +20,11 @@ export interface PostComposerProps extends Omit<FormHTMLAttributes<HTMLFormEleme
   submitLabel?: string;
   /** Ferramentas à esquerda da barra de ações (botões de ícone, interruptores). */
   tools?: ReactNode;
+  /**
+   * Habilita ou desabilita o botão de enviar. Padrão: habilitado quando há texto. Passe `true` para aceitar o envio sem
+   * texto (por exemplo, com uma imagem anexada) e `false` para barrar por outro motivo (por exemplo, enviando).
+   */
+  canSubmit?: boolean;
   disabled?: boolean;
 }
 
@@ -36,6 +41,7 @@ export const PostComposer = forwardRef<HTMLFormElement, PostComposerProps>(funct
     maxLength,
     submitLabel = 'Publicar',
     tools,
+    canSubmit,
     disabled,
     className,
     ...rest
@@ -45,11 +51,11 @@ export const PostComposer = forwardRef<HTMLFormElement, PostComposerProps>(funct
   const controlled = valueProp !== undefined;
   const [inner, setInner] = useState(defaultValue);
   const value = controlled ? valueProp : inner;
-  const empty = value.trim().length === 0;
+  const ready = canSubmit ?? value.trim().length > 0;
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (empty || disabled) return;
+    if (!ready || disabled) return;
     onSubmit?.(value);
   };
 
@@ -78,7 +84,7 @@ export const PostComposer = forwardRef<HTMLFormElement, PostComposerProps>(funct
               {value.length}/{maxLength}
             </span>
           ) : null}
-          <Button type="submit" size="sm" disabled={empty || disabled}>
+          <Button type="submit" size="sm" disabled={!ready || disabled}>
             {submitLabel}
           </Button>
         </div>
