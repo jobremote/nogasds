@@ -27,6 +27,21 @@ describe('Post', () => {
     expect(screen.getByRole('link', { name: 'Maria da Silva' })).toHaveAttribute('href', '/maria');
   });
 
+  it('tagsAfter fica depois da mídia e antes das ações; tags continua antes do texto', () => {
+    const { container } = render(
+      <Post author="Maria" tags={<Badge>Antes</Badge>} tagsAfter={<Badge>Depois</Badge>} media={<span>img</span>} actions={<PostAction icon="favorite" label="Curtir" />}>
+        Texto
+      </Post>,
+    );
+    const order = [...container.querySelector('article')!.children].map((child) => child.className.split(' ').filter((c) => c.startsWith('nds-post__')).join(' '));
+    expect(order).toEqual(['nds-post__header', 'nds-post__tags', 'nds-post__body', 'nds-post__media', 'nds-post__tags nds-post__tags--after', 'nds-post__footer']);
+  });
+
+  it('sem tagsAfter não cria o bloco', () => {
+    const { container } = render(<Post author="Maria">Texto</Post>);
+    expect(container.querySelector('.nds-post__tags--after')).toBeNull();
+  });
+
   it('só mostra mídia e rodapé quando fornecidos', () => {
     const { container, rerender } = render(<Post author="Maria">Texto</Post>);
     expect(container.querySelector('.nds-post__media')).toBeNull();

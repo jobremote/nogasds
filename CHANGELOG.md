@@ -2,6 +2,15 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.15.0] - 2026-11-13
+
+### Adicionado
+- `ButtonLink` (Figma: **Botão**): link com a aparência do `Button` (mesmas variantes e tamanhos), para ações que levam a outra página. É um `<a>` de verdade; não aninhe um `Button` em um link.
+- `PageFooter` (Figma: **Rodapé da página**): rodapé com linha de atribuição e links institucionais separados por ponto, só texto, centralizado.
+- `SuggestedAccount` ganha `href` (e `linkLabel`): avatar e nomes viram um só link; a `action` fica fora do link.
+- `ProfileSummary` ganha `href` (e `linkLabel`): avatar e nome viram um só link. A documentação de `stats` corrigida: passe os `<Stat>` soltos (o componente já cria o `<dl>`).
+- `Post` ganha `tagsAfter`: selos **depois do conteúdo** (depois da mídia, antes das ações), como rodapé do post. `tags` continua antes do texto.
+
 ## [0.14.0] - 2026-11-13
 
 ### Adicionado

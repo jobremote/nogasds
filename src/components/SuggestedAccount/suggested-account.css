@@ -29,3 +29,21 @@
   letter-spacing: var(--nds-type-caption-tracking);
   color: var(--nds-text-muted);
 }
+
+/* Avatar e nomes juntos (um link quando há `href`); a ação fica ao lado, fora do link. */
+.nds-suggested-account__identity {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--nds-space-gap-md);
+  color: inherit;
+  text-decoration: none;
+}
+.nds-suggested-account__identity--link:hover .nds-suggested-account__name {
+  text-decoration: underline;
+}
+.nds-suggested-account__identity--link:focus-visible {
+  outline: var(--nds-stroke-focus) solid var(--nds-focus-ring);
+  outline-offset: 0;
+}

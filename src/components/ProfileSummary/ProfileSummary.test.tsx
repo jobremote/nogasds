@@ -32,6 +32,13 @@ describe('ProfileSummary', () => {
     expect(container.querySelector('.nds-profile-summary__stats')).toBeNull();
   });
 
+  it('com href, avatar e nome viram um só link; sem href não há link', () => {
+    const { rerender } = render(<ProfileSummary name="Maria da Silva" handle="@maria" href="/perfil/maria" />);
+    expect(screen.getByRole('link', { name: /Maria da Silva/ })).toHaveAttribute('href', '/perfil/maria');
+    rerender(<ProfileSummary name="Maria da Silva" handle="@maria" />);
+    expect(screen.queryByRole('link')).toBeNull();
+  });
+
   it('não tem violações de acessibilidade', async () => {
     const { container } = render(
       <ProfileSummary name="Maria da Silva" handle="@maria" bio="Bio." stats={<Stat value={1} label="Itens" />} />,

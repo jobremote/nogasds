@@ -14,7 +14,7 @@ Na `0.13.0` o catálogo cobre todos os componentes do Figma. Nomes e props em in
 
 | Grupo | Componentes |
 | --- | --- |
-| Botões | `Button` (6 variantes, incluindo Perigo, × 2 tamanhos, com ícone `leadingIcon` e `trailingIcon` opcionais), `IconButton` |
+| Botões | `Button` (6 variantes, incluindo Perigo, × 2 tamanhos, com ícone `leadingIcon` e `trailingIcon` opcionais), `ButtonLink` (a mesma aparência, para ir a outra página), `IconButton` |
 | Formulários | `TextField`, `TextArea`, `Select` (combo box), `DateField` + `DatePicker`, `MonthYearField`, `DurationField`, `ScreenshotField`, `Rating`, `CodeField`, `SearchField` |
 | Seleção | `Checkbox`, `Radio`, `ChoiceCard`, `Switch`, `Tag` (com cor), `ColorPicker` |
 | Feedback | `Banner`, `Toast`, `Badge`, `Modal` |

@@ -5,6 +5,8 @@ export { Badge, type BadgeProps, type BadgeTone } from './components/Badge/Badge
 export { Banner, type BannerProps, type BannerVariant } from './components/Banner/Banner';
 export { BoardColumn, type BoardColumnProps } from './components/BoardColumn/BoardColumn';
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from './components/Button/Button';
+export { ButtonLink, type ButtonLinkProps } from './components/ButtonLink/ButtonLink';
+export { PageFooter, type PageFooterLink, type PageFooterProps } from './components/PageFooter/PageFooter';
 export { Card, type CardProps } from './components/Card/Card';
 export { Checkbox, type CheckboxProps } from './components/Checkbox/Checkbox';
 export { ChoiceCard, type ChoiceCardProps } from './components/ChoiceCard/ChoiceCard';
