@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '../../test/axe';
 import { Button } from '../Button/Button';
@@ -27,6 +27,25 @@ describe('SuggestedAccount', () => {
     );
     await user.click(screen.getByRole('button', { name: 'Seguir' }));
     expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('com href, avatar e nomes viram um só link e a ação fica fora dele', () => {
+    render(<SuggestedAccount name="Maria da Silva" handle="@maria" href="/perfil/maria" action={<Button size="sm">Seguir</Button>} />);
+    const link = screen.getByRole('link', { name: /Maria da Silva/ });
+    expect(link).toHaveAttribute('href', '/perfil/maria');
+    expect(within(link).getByText('@maria')).toBeInTheDocument();
+    expect(within(link).queryByRole('button')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Seguir' })).toBeInTheDocument();
+  });
+
+  it('sem href não há link', () => {
+    render(<SuggestedAccount name="Maria" action={<Button size="sm">Seguir</Button>} />);
+    expect(screen.queryByRole('link')).toBeNull();
+  });
+
+  it('linkLabel troca o nome acessível do link', () => {
+    render(<SuggestedAccount name="Maria" href="/x" linkLabel="Ver perfil de Maria" />);
+    expect(screen.getByRole('link', { name: 'Ver perfil de Maria' })).toBeInTheDocument();
   });
 
   it('não tem violações de acessibilidade', async () => {

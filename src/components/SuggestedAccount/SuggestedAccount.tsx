@@ -10,19 +10,37 @@ export interface SuggestedAccountProps extends HTMLAttributes<HTMLDivElement> {
   avatar?: Omit<AvatarProps, 'name' | 'size'>;
   /** Ação à direita, normalmente um `<Button variant="outline" size="sm">`. */
   action?: ReactNode;
+  /**
+   * Quando informado, o avatar e os nomes viram **um só link** para esse endereço (por exemplo, o perfil da pessoa);
+   * a `action` fica de fora do link.
+   */
+  href?: string;
+  /** Nome acessível do link (padrão: o nome da conta). */
+  linkLabel?: string;
 }
 
 export const SuggestedAccount = forwardRef<HTMLDivElement, SuggestedAccountProps>(function SuggestedAccount(
-  { name, handle, avatar, action, className, ...rest },
+  { name, handle, avatar, action, href, linkLabel, className, ...rest },
   ref,
 ) {
-  return (
-    <div {...rest} ref={ref} className={cx('nds-suggested-account', className)}>
+  const identity = (
+    <>
       <Avatar {...avatar} name={name} size="md" />
       <div className="nds-suggested-account__names">
         <p className="nds-suggested-account__name">{name}</p>
         {handle ? <p className="nds-suggested-account__handle">{handle}</p> : null}
       </div>
+    </>
+  );
+  return (
+    <div {...rest} ref={ref} className={cx('nds-suggested-account', className)}>
+      {href !== undefined ? (
+        <a className="nds-suggested-account__identity nds-suggested-account__identity--link" href={href} aria-label={linkLabel}>
+          {identity}
+        </a>
+      ) : (
+        <div className="nds-suggested-account__identity">{identity}</div>
+      )}
       {action}
     </div>
   );

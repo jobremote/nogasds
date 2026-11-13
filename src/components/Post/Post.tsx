@@ -16,8 +16,10 @@ export interface PostProps extends HTMLAttributes<HTMLElement> {
   avatar?: Omit<AvatarProps, 'name' | 'size'>;
   /** Menu do post, normalmente `<IconButton icon="more-horiz" label="Mais opções" />`. */
   menu?: ReactNode;
-  /** Selos do assunto, normalmente `<Badge>`s. */
+  /** Selos do assunto, normalmente `<Badge>`s, **antes** do texto (logo abaixo do autor). */
   tags?: ReactNode;
+  /** Selos do assunto **depois do conteúdo** (depois da mídia, antes das ações), como rodapé do post. Pode usar os dois. */
+  tagsAfter?: ReactNode;
   /** Texto da publicação. */
   children: ReactNode;
   /** Imagem ou mídia (Figma: Imagem = Sim). */
@@ -29,7 +31,7 @@ export interface PostProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const Post = forwardRef<HTMLElement, PostProps>(function Post(
-  { author, authorLink, meta, avatar, menu, tags, children, media, actions, endActions, className, ...rest },
+  { author, authorLink, meta, avatar, menu, tags, tagsAfter, children, media, actions, endActions, className, ...rest },
   ref,
 ) {
   return (
@@ -45,6 +47,7 @@ export const Post = forwardRef<HTMLElement, PostProps>(function Post(
       {tags ? <div className="nds-post__tags">{tags}</div> : null}
       <div className="nds-post__body">{children}</div>
       {media ? <div className="nds-post__media">{media}</div> : null}
+      {tagsAfter ? <div className="nds-post__tags nds-post__tags--after">{tagsAfter}</div> : null}
       {actions || endActions ? (
         <footer className="nds-post__footer">
           {actions}
