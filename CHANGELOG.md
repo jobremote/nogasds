@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.16.0] - 2026-11-16
+
+### Adicionado
+- `MentionList` (Figma: **Sugestões de jogo (@)**): lista de sugestões que abre abaixo de um campo de texto quando a pessoa digita um gatilho como "@". Só apresenta: o campo cuida do teclado e aponta para a opção ativa com `aria-activedescendant={getMentionOptionId(id, activeIndex)}`. Itens com miniatura, texto e detalhe; linha de dica e mensagem de lista vazia opcionais.
+- `GroupedTags` (Figma: **Marcas agrupadas**): itens em linhas por grupo, cada linha com um divisor em cima e um selo opcional no começo. Pensado para o `tagsAfter` do `Post` (o primeiro divisor separa o texto do primeiro grupo).
+- `PostComposer` ganha `suggestions` (lista de sugestões abaixo do campo), `attachments` (itens entre o campo e a barra de ações), `inputRef` (referência do campo, para ler e mudar o cursor) e `inputProps` (teclado, cursor e ARIA do campo).
+
 ## [0.15.0] - 2026-11-13
 
 ### Adicionado
