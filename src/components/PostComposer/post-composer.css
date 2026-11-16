@@ -49,6 +49,12 @@
   background: var(--nds-surface-raised);
   color: var(--nds-text-disabled);
 }
+.nds-post-composer__attachments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nds-space-gap-sm);
+}
 .nds-post-composer__actions {
   display: flex;
   align-items: center;

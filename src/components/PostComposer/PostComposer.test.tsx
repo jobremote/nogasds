@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '../../test/axe';
@@ -68,6 +69,41 @@ describe('PostComposer', () => {
     render(<PostComposer {...base} defaultValue="texto" disabled />);
     expect(screen.getByRole('textbox')).toBeDisabled();
     expect(screen.getByRole('button', { name: 'Publicar' })).toBeDisabled();
+  });
+
+  it('mostra as sugestões e os itens anexados entre o campo e a barra de ações', () => {
+    render(
+      <PostComposer
+        {...base}
+        suggestions={<div data-testid="sugestoes">Sugestões</div>}
+        attachments={<span>Item anexado</span>}
+      />,
+    );
+    const field = screen.getByRole('textbox');
+    const suggestions = screen.getByTestId('sugestoes');
+    const attached = screen.getByText('Item anexado');
+    const submit = screen.getByRole('button', { name: 'Publicar' });
+    expect(field.compareDocumentPosition(suggestions) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(suggestions.compareDocumentPosition(attached) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(attached.compareDocumentPosition(submit) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+
+  it('entrega a referência do campo e repassa atributos de teclado e ARIA', async () => {
+    const user = userEvent.setup();
+    const ref = createRef<HTMLTextAreaElement>();
+    const onKeyDown = vi.fn();
+    render(
+      <PostComposer
+        {...base}
+        inputRef={ref}
+        inputProps={{ onKeyDown, role: 'combobox', 'aria-expanded': true, 'aria-activedescendant': 'opcao-1' }}
+      />,
+    );
+    const field = screen.getByRole('combobox', { name: 'Texto da publicação' });
+    expect(ref.current).toBe(field);
+    expect(field).toHaveAttribute('aria-activedescendant', 'opcao-1');
+    await user.type(field, '@');
+    expect(onKeyDown).toHaveBeenCalled();
   });
 
   it('não tem violações de acessibilidade', async () => {

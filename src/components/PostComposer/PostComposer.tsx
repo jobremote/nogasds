@@ -1,4 +1,12 @@
-import { forwardRef, useState, type FormEvent, type FormHTMLAttributes, type ReactNode } from 'react';
+import {
+  forwardRef,
+  useState,
+  type FormEvent,
+  type FormHTMLAttributes,
+  type ReactNode,
+  type Ref,
+  type TextareaHTMLAttributes,
+} from 'react';
 import { cx } from '../cx';
 import { Avatar, type AvatarProps } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
@@ -26,6 +34,20 @@ export interface PostComposerProps extends Omit<FormHTMLAttributes<HTMLFormEleme
    */
   canSubmit?: boolean;
   disabled?: boolean;
+  /** Referência do campo de texto, para ler e mudar a posição do cursor (por exemplo, ao inserir uma menção). */
+  inputRef?: Ref<HTMLTextAreaElement>;
+  /**
+   * Atributos extras do campo de texto: teclado (`onKeyDown`), cursor (`onSelect`, `onClick`) e ARIA (`role="combobox"`,
+   * `aria-activedescendant`, `aria-controls`, `aria-expanded`) para uma lista de sugestões.
+   */
+  inputProps?: Omit<
+    TextareaHTMLAttributes<HTMLTextAreaElement>,
+    'value' | 'defaultValue' | 'onChange' | 'maxLength' | 'disabled' | 'aria-label' | 'placeholder'
+  >;
+  /** Lista de sugestões logo abaixo do campo (normalmente um `<MentionList>`). */
+  suggestions?: ReactNode;
+  /** Itens anexados entre o campo e a barra de ações (por exemplo, marcas escolhidas). */
+  attachments?: ReactNode;
 }
 
 /** Caixa de criação de publicação (Figma: Criar post). */
@@ -43,6 +65,10 @@ export const PostComposer = forwardRef<HTMLFormElement, PostComposerProps>(funct
     tools,
     canSubmit,
     disabled,
+    inputRef,
+    inputProps,
+    suggestions,
+    attachments,
     className,
     ...rest
   },
@@ -64,6 +90,8 @@ export const PostComposer = forwardRef<HTMLFormElement, PostComposerProps>(funct
       <Avatar {...avatar} size="md" />
       <div className="nds-post-composer__editor">
         <textarea
+          {...inputProps}
+          ref={inputRef}
           className="nds-post-composer__input"
           aria-label={label}
           placeholder={placeholder}
@@ -76,6 +104,8 @@ export const PostComposer = forwardRef<HTMLFormElement, PostComposerProps>(funct
             onChange?.(event.target.value);
           }}
         />
+        {suggestions}
+        {attachments ? <div className="nds-post-composer__attachments">{attachments}</div> : null}
         <div className="nds-post-composer__actions">
           {tools}
           <span className="nds-post-composer__spacer" />
