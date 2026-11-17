@@ -1,5 +1,6 @@
 import './styles/index.css';
 
+export { ActivityGame, ActivityPost, type ActivityGameProps, type ActivityPostProps } from './components/ActivityPost/ActivityPost';
 export { Avatar, type AvatarProps, type AvatarSize, type AvatarTone } from './components/Avatar/Avatar';
 export { Badge, type BadgeProps, type BadgeTone } from './components/Badge/Badge';
 export { Banner, type BannerProps, type BannerVariant } from './components/Banner/Banner';

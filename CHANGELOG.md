@@ -2,6 +2,12 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.18.0] - 2026-11-17
+
+### Adicionado
+- `ActivityPost` (Figma: **Post de atividade**): post gerado por uma atividade do Game Shelf. Autor, `phrase` ("Zerou", "Começou a jogar"...), `note` opcional, `excerpt` (trecho de review) ou `media` (screenshot), card do jogo e `actions`.
+- `ActivityGame` (Figma: **Jogo clicável**): card do jogo com capa, título, `meta`, `detail` (tempo e nota, só quando informados) e `badge` de status. Vira link quando recebe `href`.
+
 ## [0.17.0] - 2026-11-17
 
 ### Adicionado
