@@ -1,0 +1,92 @@
+.nds-comment {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nds-space-gap-md);
+  padding: var(--nds-space-inset-md) 0;
+  color: var(--nds-text-primary);
+}
+/* Resposta: recuo igual ao avatar (32 px) + o vão (12 px). */
+.nds-comment--reply {
+  padding-left: calc(32px + var(--nds-space-gap-md));
+}
+.nds-comment .nds-avatar {
+  flex: none;
+}
+.nds-comment__content {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--nds-space-gap-xs);
+}
+
+.nds-comment__author {
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-gap-sm);
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.nds-comment__name {
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+}
+.nds-comment__meta {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}
+
+.nds-comment__body {
+  font: var(--nds-type-body);
+  letter-spacing: var(--nds-type-body-tracking);
+  overflow-wrap: anywhere;
+}
+.nds-comment__body > p {
+  margin: 0;
+}
+/* Oculto (dono): o texto fica esmaecido para lembrar que os outros leitores não o veem. */
+.nds-comment--hidden-owner .nds-comment__body {
+  opacity: 0.6;
+}
+.nds-comment__hint {
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-gap-sm);
+  margin: 0;
+  font: var(--nds-type-caption);
+  letter-spacing: var(--nds-type-caption-tracking);
+  color: var(--nds-text-muted);
+}
+
+.nds-comment__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-gap-xs);
+}
+.nds-comment__spacer {
+  flex: 1 1 auto;
+}
+
+/* Oculto e Excluído: caixa rebaixada no lugar do texto. */
+.nds-comment__notice {
+  display: flex;
+  align-items: center;
+  gap: var(--nds-space-gap-sm);
+  padding: var(--nds-space-inset-sm) var(--nds-space-inset-md);
+  background: var(--nds-surface-sunken);
+  color: var(--nds-text-secondary);
+}
+.nds-comment__notice-text {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+}

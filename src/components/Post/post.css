@@ -89,3 +89,8 @@
   letter-spacing: var(--nds-type-caption-tracking);
   color: var(--nds-text-muted);
 }
+.nds-post-action__count--pressed {
+  font: var(--nds-type-label-small);
+  letter-spacing: var(--nds-type-label-small-tracking);
+  color: var(--nds-text-primary);
+}
