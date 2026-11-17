@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.17.0] - 2026-11-17
+
+### Adicionado
+- `Comment` (Figma: **Comentário**): comentário com avatar, autor, texto e ações (curtir com contador, ação de texto e menu). `reply` recua a resposta. `status`: `default` (Padrão e Curtido, via `liked`), `hidden` (só o aviso), `hidden-owner` (aviso pequeno, texto esmaecido e ações) e `deleted` (só o aviso, sem ações).
+- Ícone `favorite-fill` (coração preenchido), da biblioteca Icons.
+- `PostAction` ganha `pressedIcon`: ícone mostrado quando `pressed` está ligado. Ligado, o contador também fica em negrito e na cor primária.
+
 ## [0.16.0] - 2026-11-16
 
 ### Adicionado

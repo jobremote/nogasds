@@ -13,6 +13,7 @@ export { ChoiceCard, type ChoiceCardProps } from './components/ChoiceCard/Choice
 export { CodeField, type CodeFieldHandle, type CodeFieldProps } from './components/CodeField/CodeField';
 export { DurationField, type DurationFieldProps, type DurationValue } from './components/DurationField/DurationField';
 export { COLOR_LABELS, ColorPicker, type ColorPickerProps } from './components/ColorPicker/ColorPicker';
+export { Comment, type CommentProps, type CommentStatus } from './components/Comment/Comment';
 export { Cover, type CoverProps } from './components/Cover/Cover';
 export { DateField, type DateFieldProps } from './components/DateField/DateField';
 export { DatePicker, type DatePickerProps } from './components/DatePicker/DatePicker';

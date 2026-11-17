@@ -71,6 +71,15 @@ describe('Post', () => {
     expect(screen.getByRole('button', { name: 'Curtir' })).toHaveAttribute('aria-pressed', 'true');
   });
 
+  it('PostAction com pressedIcon troca o ícone e destaca o contador quando ligado', () => {
+    const { container, rerender } = render(<PostAction icon="favorite" pressedIcon="favorite-fill" label="Curtir" count={5} pressed={false} />);
+    const off = container.querySelector('svg path')!.getAttribute('d');
+    expect(container.querySelector('.nds-post-action__count--pressed')).toBeNull();
+    rerender(<PostAction icon="favorite" pressedIcon="favorite-fill" label="Curtir" count={6} pressed />);
+    expect(container.querySelector('svg path')!.getAttribute('d')).not.toBe(off);
+    expect(container.querySelector('.nds-post-action__count--pressed')).toHaveTextContent('6');
+  });
+
   it('não tem violações de acessibilidade', async () => {
     const { container } = render(
       <Post

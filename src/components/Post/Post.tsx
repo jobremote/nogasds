@@ -65,18 +65,20 @@ export interface PostActionProps {
   label: string;
   /** Contador ao lado do ícone. */
   count?: number;
-  /** Quando definido, o botão vira um alternador (`aria-pressed`). */
+  /** Quando definido, o botão vira um alternador (`aria-pressed`). Ligado, o contador fica em negrito. */
   pressed?: boolean;
+  /** Ícone mostrado quando `pressed` está ligado (por exemplo, o coração preenchido). Sem ele, o ícone não muda. */
+  pressedIcon?: IconName;
   onClick?: () => void;
   disabled?: boolean;
 }
 
 /** Botão de ícone com contador, para a barra de ações do `Post`. */
-export function PostAction({ icon, label, count, pressed, onClick, disabled }: PostActionProps) {
+export function PostAction({ icon, pressedIcon, label, count, pressed, onClick, disabled }: PostActionProps) {
   return (
     <span className="nds-post-action">
-      <IconButton icon={icon} label={label} size="sm" aria-pressed={pressed} onClick={onClick} disabled={disabled} />
-      {count !== undefined ? <span className="nds-post-action__count">{count}</span> : null}
+      <IconButton icon={pressed && pressedIcon ? pressedIcon : icon} label={label} size="sm" aria-pressed={pressed} onClick={onClick} disabled={disabled} />
+      {count !== undefined ? <span className={cx('nds-post-action__count', pressed && 'nds-post-action__count--pressed')}>{count}</span> : null}
     </span>
   );
 }
