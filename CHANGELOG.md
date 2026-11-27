@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versionamento [semântico](https://semver.org/lang/pt-BR/).
 
+## [0.19.0] - 2026-11-27
+
+### Adicionado
+- `MediaHero` (Figma: **Cabeçalho de mídia**): cabeçalho de página de mídia (jogo, filme, livro). `backgroundSrc` com degradê para a cor da página (sem ela, cor sólida), `cover`, `title` (`h1` por padrão), `meta`, `badges`, `credits` e `actions`. Conteúdo numa coluna de até 1040 px; empilha em telas estreitas.
+- `DataList` e `DataRow` (Figma: **Linha de dado**): pares rótulo e valor com divisor. Linha sem valor não aparece.
+- `Thumbnail` (Figma: **Miniatura**): imagem 16:9 de galeria. `spoiler` protege com o `SpoilerGuard`; `onOpen` transforma a miniatura em botão para abrir a imagem inteira.
+
 ## [0.18.0] - 2026-11-17
 
 ### Adicionado

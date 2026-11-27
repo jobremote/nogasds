@@ -1,0 +1,34 @@
+.nds-thumbnail {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--nds-radius-default);
+  background: var(--nds-surface-sunken);
+}
+.nds-thumbnail__guard,
+.nds-thumbnail__guard > .nds-spoiler__content {
+  width: 100%;
+  height: 100%;
+}
+/* Miniatura pequena: o aviso de spoiler fica mais compacto. */
+.nds-thumbnail .nds-spoiler__cover {
+  padding: var(--nds-space-inset-sm);
+}
+.nds-thumbnail__open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.nds-thumbnail__open:focus-visible {
+  outline: var(--nds-stroke-emphasis) solid var(--nds-text-primary);
+  outline-offset: -2px;
+}
+.nds-thumbnail__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

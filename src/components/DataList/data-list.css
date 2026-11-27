@@ -1,0 +1,25 @@
+.nds-data-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.nds-data-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nds-space-gap-sm);
+  padding: var(--nds-space-inset-sm) 0;
+  border-bottom: var(--nds-stroke-default) solid var(--nds-border-subtle);
+}
+.nds-data-row__label {
+  font: var(--nds-type-small);
+  letter-spacing: var(--nds-type-small-tracking);
+  color: var(--nds-text-secondary);
+}
+.nds-data-row__value {
+  margin: 0;
+  font: var(--nds-type-label);
+  letter-spacing: var(--nds-type-label-tracking);
+  color: var(--nds-text-primary);
+  text-align: right;
+}

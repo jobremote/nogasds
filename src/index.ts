@@ -16,6 +16,7 @@ export { DurationField, type DurationFieldProps, type DurationValue } from './co
 export { COLOR_LABELS, ColorPicker, type ColorPickerProps } from './components/ColorPicker/ColorPicker';
 export { Comment, type CommentProps, type CommentStatus } from './components/Comment/Comment';
 export { Cover, type CoverProps } from './components/Cover/Cover';
+export { DataList, DataRow, type DataListProps, type DataRowProps } from './components/DataList/DataList';
 export { DateField, type DateFieldProps } from './components/DateField/DateField';
 export { DatePicker, type DatePickerProps } from './components/DatePicker/DatePicker';
 export { Icon, type IconProps } from './components/Icon/Icon';
@@ -28,6 +29,7 @@ export { MentionList, getMentionOptionId, type MentionItem, type MentionListProp
 export { MonthYearField, MONTH_NAMES, type MonthYearFieldProps, type MonthYearValue } from './components/MonthYearField/MonthYearField';
 export { Link, type LinkProps, type LinkSize } from './components/Link/Link';
 export { Logo, type LogoName, type LogoProps } from './components/Logo/Logo';
+export { MediaHero, type MediaHeroProps } from './components/MediaHero/MediaHero';
 export { MenuItem, type MenuItemProps } from './components/MenuItem/MenuItem';
 export { Menu, MenuOption, type MenuOptionProps, type MenuProps } from './components/Menu/Menu';
 export { Modal, type ModalProps } from './components/Modal/Modal';
@@ -50,5 +52,6 @@ export { Tabs, type TabItem, type TabsProps } from './components/Tabs/Tabs';
 export { Tag, type TagColor, type TagProps } from './components/Tag/Tag';
 export { TextArea, type TextAreaProps } from './components/TextArea/TextArea';
 export { TextField, type TextFieldProps } from './components/TextField/TextField';
+export { Thumbnail, type ThumbnailProps } from './components/Thumbnail/Thumbnail';
 export { Toast, type ToastProps, type ToastVariant } from './components/Toast/Toast';
 export { MobileTopBar, TopBar, type TopBarProps } from './components/TopBar/TopBar';
